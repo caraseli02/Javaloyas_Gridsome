@@ -11,9 +11,16 @@
     "@gridsome/remark-prismjs": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.0",
-    "gridsome": "^0.7.0"
+    "aos": "^2.3.4",
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-modal": "^0.1.1",
+    "gridsome-plugin-seo": "^1.0.1",
+    "gridsome-scroll-reveal": "^1.0.11",
+    "vue-glide-js": "^1.3.14",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^3.0.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0"
   }

@@ -3,10 +3,11 @@
 
     <header class="header">
       <div class="header__left">
-        <Logo v-if="showLogo" /> 
+        <Logo v-if="showLogo" />
+        <Navbar/>
       </div>
-      
-      <div class="header__right">        
+
+      <div class="header__right mr-4">
         <ToggleTheme />
       </div>
     </header>
@@ -14,24 +15,23 @@
     <main class="main">
       <slot/>
     </main>
-
-    <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}. </span>
-      <span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span>
-    </footer>
-
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
 import ToggleTheme from '~/components/ToggleTheme.vue'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default {
   props: {
     showLogo: { default: true }
   },
   components: {
+    Footer,
+    Navbar,
     Logo,
     ToggleTheme
   }
@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -47,6 +48,10 @@ export default {
   padding: 0 calc(var(--space) / 2);
   top:0;
   z-index: 10;
+  background-image: url(../assets/img/guitar.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
 
   &__left,
   &__right {
@@ -63,7 +68,6 @@ export default {
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 15px 0;
 }
 
 .footer {
@@ -82,4 +86,6 @@ export default {
     color: currentColor;
   }
 }
+
+
 </style>

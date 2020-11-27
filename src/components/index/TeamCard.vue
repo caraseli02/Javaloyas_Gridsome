@@ -1,129 +1,177 @@
 <template>
-  <section class="pt-20 pb-48">
-    <div class="container mx-auto px-4">
+  <section class="svg pt-20 pb-48">
+    <div class="container mx-auto">
       <div class="flex flex-wrap justify-center text-center mb-24">
         <div class="w-full lg:w-6/12 px-4">
-          <h2 class="text-4xl font-semibold uppercase">
-            Banda
-          </h2>
+          <h2 class="text-4xl font-semibold uppercase">Banda</h2>
           <p class="text-lg leading-relaxed m-4">
             lleno de emociones y ganas de llenar de amor todos los escenarios.
           </p>
         </div>
       </div>
       <!-- Trainer Card Wrapper -->
-      <div class="flex flex-wrap">
-        <!-- Card 1 -->
-        <div
-            class="w-full md:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="flip-right"
+      <vue-glide
+        v-scroll-reveal.reset="{ delay: 350 }"
+        class=""
+        :options="options"
+      >
+        <template slot="control">
+          <button
+            class="absolute w-full h-12 flex justify-center mt-10 text-xl border-0 outline-none animate-pulse"
+            data-glide-dir="<"
+          >
+            <div class="transform rotate-90">
+              <svg
+                class="animate-bounce w-6 h-6"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
+          </button>
+          <button
+            class="absolute w-full h-12 flex justify-center text-xl border-0 outline-none animate-pulse"
+            data-glide-dir=">"
+          >
+            <div class="transform -rotate-90">
+              <svg
+                class="animate-bounce w-6 h-6"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
+          </button>
+        </template>
+        <vue-glide-slide
+          v-for="(member, index) in members"
+          :key="index"
+          class="m-0"
         >
-          <div class="px-6">
-            <img
-                alt="los javaloyas"
-                src="../assets/img/portfo1.png"
-                class="shadow-lg rounded max-w-full mx-auto"
-                style="max-width: 250px"
+          <div class="pr-8">
+            <g-image
+              alt="los javaloyas"
+              :src="require(`!!assets-loader!@img/${member.img}.png`)"
+              class="shadow-lg rounded mx-auto"
             />
             <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold">Luis Javaloyas</h5>
+              <h3 class="text-xl font-bold">{{ member.name }}</h3>
               <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-               Voz Solista, Violin
+                {{ member.inst }}
               </p>
             </div>
           </div>
-        </div>
-        <!-- Card 2 -->
-        <div
-            class="w-full md:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="flip-right"
-        >
-          <div class="px-6">
-            <img
-                alt="los javaloyas"
-                src="../assets/img/portfo2.png"
-            class="shadow-lg rounded max-w-full mx-auto"
-            style="max-width: 250px"
-            />
-            <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold">Serafin Nebot</h5>
-              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                Voz, Piano
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div
-            class="w-full md:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="flip-right"
-        >
-          <div class="px-6">
-            <img
-                alt="los javaloyas"
-                src="../assets/img/portfo3.png"
-            class="shadow-lg rounded max-w-full mx-auto"
-            style="max-width: 250px"
-            />
-            <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold">Daniel Salva</h5>
-              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                Bajo
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div
-            class="w-full md:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="flip-right"
-        >
-          <div class="px-6 pt-4">
-            <img
-                alt="los javaloyas"
-                src="../assets/img/portfo4.png"
-            class="shadow-lg rounded max-w-full mx-auto"
-            style="max-width: 250px"
-            />
-            <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold">Leo Villar W</h5>
-              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                Bateria, Trompeta
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div
-            class="w-full md:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="flip-right"
-        >
-          <div class="px-6 mt-4">
-            <img
-                alt="los javaloyas"
-                src="../assets/img/portfo5.png"
-            class="shadow-lg rounded max-w-full mx-auto"
-            style="max-width: 250px"
-            />
-            <div class="pt-6 text-center">
-              <h5 class="text-xl font-bold">Javier Simal</h5>
-              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-               Voz, Guitara, Trompeta
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </vue-glide-slide>
+      </vue-glide>
     </div>
   </section>
 </template>
 
 <script>
+import { Glide, GlideSlide } from "vue-glide-js";
+
 export default {
-name: "TeamCard"
-}
+  name: "TeamCard",
+  data() {
+    return {
+      options: {
+        autoplay: 5000,
+        bound: true,
+        breakpoints: {
+          450: {
+            perView: 1,
+          },
+          800: {
+            perView: 2,
+          },
+        },
+      },
+      members: [
+        {
+          name: "Luis Javaloyas",
+          inst: "Voz, Piano",
+          img: "Luis",
+        },
+        {
+          name: "Serafin Nebot",
+          inst: "Voz Solista, Violin",
+          img: "Serafin",
+        },
+        {
+          name: "Daniel Salva",
+          inst: "Bajo",
+          img: "Daniel",
+        },
+        {
+          name: "Leo Villar W",
+          inst: "Bateria, Trompeta",
+          img: "Leo",
+        },
+        {
+          name: "Javier Simal",
+          inst: "Voz, Guitara, Trompeta",
+          img: "Javier",
+        },
+      ],
+    };
+  },
+  components: {
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide,
+  },
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.svg {
+  position: relative;
 
+  &:before {
+    content: "";
+    background-image: url(../../assets/img/violin.svg);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    background-image: url(../../assets/img/micro.svg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:focus,
+button:active,
+button:hover {
+  outline: none;
+}
 </style>
