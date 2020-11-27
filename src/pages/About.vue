@@ -82,7 +82,8 @@ $color: #20b2aa;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../assets/img/landing2.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
   background-attachment: fixed;
   color: #fff;
 }
