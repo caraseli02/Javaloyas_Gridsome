@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-
     <header class="header">
       <div class="header__left">
         <Logo v-if="showLogo" />
-        <Navbar/>
+        <Navbar />
       </div>
 
       <div class="header__right mr-4">
@@ -13,43 +12,42 @@
     </header>
 
     <main class="main">
-      <slot/>
+      <slot />
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import ToggleTheme from '~/components/ToggleTheme.vue'
+import Logo from "~/components/Logo.vue";
+import ToggleTheme from "~/components/ToggleTheme.vue";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default {
   props: {
-    showLogo: { default: true }
+    showLogo: { default: true },
   },
   components: {
     Footer,
     Navbar,
     Logo,
-    ToggleTheme
-  }
-}
+    ToggleTheme,
+  },
+};
 </script>
 
 <style lang="scss">
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
-  top:0;
+  top: 0;
   z-index: 10;
   background-image: url(../assets/img/guitar.svg);
-  background-position: left;
+  background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -57,6 +55,11 @@ export default {
   &__right {
     display: flex;
     align-items: center;
+  }
+
+  @media screen and (max-width: 650px) {
+    //Make header sticky for large screens
+    background-image: none;
   }
 
   @media screen and (min-width: 1300px) {
@@ -76,16 +79,14 @@ export default {
   justify-content: center;
   padding: calc(var(--space) / 2);
   text-align: center;
-  font-size: .8em;
+  font-size: 0.8em;
 
   > span {
-    margin: 0 .35em;
+    margin: 0 0.35em;
   }
 
   a {
     color: currentColor;
   }
 }
-
-
 </style>

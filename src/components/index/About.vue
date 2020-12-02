@@ -3,25 +3,37 @@
     <div class="h-64 w-full bg-gradient-to-b from-black to-transparent"></div>
     <div class="dropBg container mx-auto px-4">
       <div class="items-center flex flex-col md:flex-row">
-        <!--<div
-            v-scroll-reveal.reset
-            class="md:pr-12">
-          <small class="text-gray-800">Sobre el grupo</small>
-          <h3 class="text-4xl uppercase font-bold text-gray-900">Un grupo de profesionales</h3>
-          <p class="mt-4 text-lg leading-relaxed text-black">
-            El mas veterano de los grupos pop españoles, pero una descripcion es nada comparando con una cancion!
-          </p>
-        </div>-->
         <div
-          class="w-full flex justify-center ml-auto mr-2"
+          class="w-full flex flex-col justify-center ml-auto mr-2"
           v-scroll-reveal.reset
         >
           <youtube
             :fit-parent="true"
             :video-id="videoId"
             ref="youtube"
-            @playing="playing"
           ></youtube>
+          <section class="flex flex-col overflow-auto h-32 bg-gray-900">
+            <!-- <g-image
+              v-for="(photo, index) in photos"
+              :src="photo"
+              :key="index"
+              @click="activePhoto = index"
+              :class="{ active: activePhoto == index }"
+              :style="'background-image: url(' + photo + ')'"
+            ></g-image> -->
+            <span class="w-8 h-8 border-b-1 border-red-900 block"></span>
+            <span
+              v-for="(v, index) in videoList"
+              :key="index"
+              @click="changeVidio(v.id)"
+              class="w-full h-10 cursor-pointer p-1 flex justify-between"
+            >
+              <div>
+                <span class="m-2 md:ml-4"> {{ index + 1 }}</span> {{ v.name }}
+              </div>
+              <span class="p-1 bg-blue-800 rounded-lg md:mr-8">&#9658;</span>
+            </span>
+          </section>
         </div>
       </div>
       <div
@@ -39,15 +51,6 @@
           allow="encrypted-media"
         ></iframe>
       </div>
-      <!--<div class="spotify mb-6 flex justify-center flex-col">
-        <h3 class="text-center">Music Apple</h3>
-        <iframe
-            allow="autoplay *; encrypted-media *;"
-            frameborder="0" height="350"
-            style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/artist/los-javaloyas/333049447"></iframe>
-      </div>-->
     </div>
     <div class="h-64 w-full bg-gradient-to-t from-black to-transparent"></div>
   </section>
@@ -76,14 +79,27 @@ export default {
   data() {
     return {
       videoId: "BJ_z981aRNY",
+      videoList: [
+        { id: "Fn-201mACYQ", name: "Lina" },
+        { id: "mdhA9So_0fE", name: "Va cayendo una lagrima" },
+        { id: "vkNnEOqmia0", name: "Y volvere" },
+        { id: "TL3dQ_OcNF0", name: "Magicos colores" },
+        { id: "udNOGCvDy5w", name: "Como las rosas" },
+        { id: "doWrsEpZBgs", name: "Paradise of Love" },
+        { id: "adrph5mMB2Q", name: "ma Mare" },
+        { id: "RpXl3mU6EG0", name: "Tot ja es mort" },
+        { id: "qz5A8JdxkaA", name: "Bona Nit" },
+        { id: "FnIT1u27HCY", name: "Nuestro Juramento" },
+      ],
     };
   },
   methods: {
+    changeVidio(id) {
+      this.videoId = id;
+      this.playVideo();
+    },
     playVideo() {
       this.player.playVideo();
-    },
-    playing() {
-      console.log("o/ we are watching!!!");
     },
   },
   computed: {

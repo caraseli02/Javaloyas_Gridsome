@@ -4,9 +4,6 @@
       <div class="flex flex-wrap justify-center text-center mb-24">
         <div class="w-full lg:w-6/12 px-4">
           <h2 class="text-4xl font-semibold uppercase">Banda</h2>
-          <p class="text-lg leading-relaxed m-4">
-            lleno de emociones y ganas de llenar de amor todos los escenarios.
-          </p>
         </div>
       </div>
       <!-- Trainer Card Wrapper -->

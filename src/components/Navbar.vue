@@ -1,21 +1,12 @@
 <template>
   <section class="ml-4">
-    <input id="toggle" type="checkbox" />
-
-    <label for="toggle" class="hamburger">
-      <div class="top-bun"></div>
-      <div class="meat"></div>
-    </label>
-
+    <social-media />
     <div class="nav">
       <div class="nav-wrapper">
-        <nav class="nav_xs">
-          <g-link to="/" class="butn butn__new link uppercase" href="#"
-            >Inicio</g-link
-          >
-          <g-link to="/events/" class="butn butn__new link uppercase" href="#"
+        <nav class="nav_xs md:max-w-sm">
+          <!-- <g-link to="/events/" class="butn butn__new link uppercase" href="#"
             >Eventos</g-link
-          >
+          > -->
           <g-link to="/media/" class="butn butn__new link uppercase" href="#"
             >Media</g-link
           >
@@ -29,7 +20,9 @@
 </template>
 
 <script>
+import SocialMedia from "./SocialMedia.vue";
 export default {
+  components: { SocialMedia },
   name: "Navbar",
   data() {
     return {
@@ -113,11 +106,6 @@ export default {
 .butn span {
   z-index: 20;
 }
-
-#toggle {
-  display: none;
-}
-
 .nav_xs {
   display: flex;
   width: 60vw;
@@ -130,6 +118,7 @@ export default {
   width: 90px;
   height: 90px;
   background: var(--bg-icon-color);
+  background: rgba(0, 0, 0, 0.4);
   margin: 10px;
   border-radius: 25%;
   box-shadow: 0 5px 15px -5px var(--shadow-icon-color);
@@ -177,116 +166,6 @@ export default {
   100% {
     top: -10%;
     left: -10%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  /**
-    Hamburger
-  **/
-  .hamburger {
-    position: absolute;
-    top: 0.8em;
-    left: 1em;
-    width: 2em;
-    height: 45px;
-    z-index: 35;
-  }
-
-  .hamburger div {
-    position: relative;
-    width: 1.8em;
-    height: 2px;
-    border-radius: 3px;
-    background-color: red;
-    margin-top: 10px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  /**
-  Nav Styles
-  **/
-  .nav {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0d2538;
-    top: -100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    transform: scale(0);
-    z-index: 30;
-  }
-
-  .nav-wrapper {
-    position: relative;
-    overflow: hidden;
-    overflow-y: auto;
-    height: 100%;
-  }
-
-  .nav_xs {
-    text-align: left;
-    display: flex;
-    width: 80vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .nav_xs .link {
-    position: relative;
-    text-decoration: none;
-    color: #6ecddd;
-    font-size: 2em;
-    display: inline-block;
-    margin-top: 1.25em;
-    transition: color 0.2s ease-in-out;
-    letter-spacing: 1px;
-  }
-
-  .nav_xs .link:before {
-    content: "";
-    height: 0;
-    position: absolute;
-    width: 0.25em;
-    background-color: white;
-    left: -0.5em;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .nav_xs .link:hover {
-  }
-
-  .nav_xs .link:hover:before {
-    height: 100%;
-  }
-
-  /**
-  Animations
-  **/
-  #toggle:checked + .hamburger .top-bun {
-    transform: rotate(-45deg);
-    margin-top: 25px;
-  }
-
-  #toggle:checked + .hamburger .bottom-bun {
-    opacity: 0;
-    transform: rotate(45deg);
-  }
-
-  #toggle:checked + .hamburger .meat {
-    transform: rotate(45deg);
-    margin-top: -7px;
-  }
-
-  #toggle:checked + .hamburger + .nav {
-    top: 0;
-    transform: scale(1);
   }
 }
 </style>
