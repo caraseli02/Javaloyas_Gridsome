@@ -63,7 +63,9 @@
               >
             </li>
             <li class="mt-2">
-              <a href="mailto:javaloyas@gmail.com" class="hover:text-white"
+              <a
+                href="mailto:mariajavaloyas1969@gmail.com"
+                class="hover:text-white"
                 >Email</a
               >
             </li>
