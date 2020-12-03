@@ -1,8 +1,12 @@
 <template>
   <layout>
-    <section class="setBg flex min-h-screen justify-around items-center flex-wrap">
-      <div class="pseudo-parallax-card-container flex flex-row">
-
+    <section
+      class="setBg flex min-h-screen justify-around items-center flex-wrap"
+    >
+      <g-link
+        href="https://www.truiteatre.es/"
+        class="pseudo-parallax-card-container flex flex-row"
+      >
         <div class="mock top left"></div>
         <div class="mock top right"></div>
         <div class="mock bottom left"></div>
@@ -18,14 +22,20 @@
           <div class="message-container">
             <!--<div class="message message-one text-sm flex justify-center items-center">Sábado 7 Noviembre</div>
             <div class="message message-two flex justify-center items-center">20:30H</div>-->
-            <div class="message message-three flex justify-center items-center"><g-link class="comprar" href="https://www.truiteatre.es/">Comprar entradas</g-link></div>
+            <div
+              class="message message-three flex justify-center z-30 items-center"
+            >
+              <g-link class="comprar" href="https://www.truiteatre.es/"
+                >Comprar entradas</g-link
+              >
+            </div>
             <div class="instructions">
               <!--<h2 class="name">Es Gremi </h2>-->
-
             </div>
-          </div>w
+          </div>
+          w
         </div>
-      </div>
+      </g-link>
     </section>
   </layout>
 </template>
@@ -33,31 +43,30 @@
 <script>
 export default {
   name: "Events",
-  metaInfo () {
+  metaInfo() {
     return this.$seo({
-      title: 'Eventos', // Uses the titleTemplate in Gridsome config
-      description: '',
-      keywords: 'Eventos',
+      title: "Eventos", // Uses the titleTemplate in Gridsome config
+      description: "",
+      keywords: "Eventos",
       openGraph: {
-        title: 'Los Javaloyas',
-        type: 'website'
+        title: "Los Javaloyas",
+        type: "website",
       },
       twitter: {
-        title: 'Los Javaloyas',
-        type: 'website'
+        title: "Los Javaloyas",
+        type: "website",
       },
-      link: [],   // any links
-      script: []  // any scripts
-    })
+      link: [], // any links
+      script: [], // any scripts
+    });
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
 .setBg {
   background-image: url(../assets/img/partitura2.jpg);
   background-size: cover;
-
 }
 
 // colors
@@ -98,14 +107,14 @@ $card-height: 450px;
     --angleY: -25deg;
   }
 
-  &.left.bottom:hover ~ .content-container {
-    --angleX: -8deg;
-    --angleY: -25deg;
-  }
-
   &.right.top:hover ~ .content-container {
     --angleX: 8deg;
     --angleY: 25deg;
+  }
+
+  &.left.bottom:hover ~ .content-container {
+    --angleX: -8deg;
+    --angleY: -25deg;
   }
 
   &.right.bottom:hover ~ .content-container {
@@ -130,7 +139,8 @@ $card-height: 450px;
   transition: box-shadow 0.5s ease, transform 0.65s ease;
   will-change: transform;
   box-shadow: -20px 10px 20px rgba($color: #000000, $alpha: 0.4);
-  transform: translateY(0) rotateX(var(--angleX, 0)) rotateY(var(--angleY, 0)) translateZ(-10px);
+  transform: translateY(0) rotateX(var(--angleX, 0)) rotateY(var(--angleY, 0))
+    translateZ(-10px);
   filter: brightness(110%);
 }
 
@@ -192,7 +202,7 @@ $card-height: 450px;
   color: #adc0ca;
 }
 
-.comprar{
+.comprar {
   color: black;
 }
 </style>

@@ -116,7 +116,7 @@ export default {
         },
         {
           name: "Javier Simal",
-          inst: "Voz, Guitara, Trompeta",
+          inst: "Voz, Guitarra, Trompeta",
           img: "Javier",
         },
       ],
