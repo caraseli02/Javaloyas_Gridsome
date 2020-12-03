@@ -10,10 +10,11 @@
         <ToggleTheme />
       </div>
     </header>
-
-    <main class="main">
-      <slot />
-    </main>
+    <transition name="fade" appear>
+      <main class="main">
+        <slot />
+      </main>
+    </transition>
     <Footer />
   </div>
 </template>
@@ -88,5 +89,13 @@ export default {
   a {
     color: currentColor;
   }
+}
+
+.fade-enter-active {
+  transition: opacity 0.7s;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>

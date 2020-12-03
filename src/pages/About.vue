@@ -90,7 +90,7 @@ $color: #20b2aa;
 
 .p-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/20294006_1524732840927292_92689689759904834_n.jpg?_nc_cat=105&ccb=2&_nc_sid=825194&_nc_ohc=Tuu3tB4ES_IAX9Bqce2&_nc_ht=scontent-cdt1-1.xx&oh=0c03af4955953f7ef1e84efd1280949d&oe=5FE3D664);
+    url(https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/117314737_10158756411878734_8073963791518692685_o.jpg?_nc_cat=104&ccb=2&_nc_sid=825194&_nc_ohc=rm6Zmcci0A8AX__-g7m&_nc_ht=scontent-cdg2-1.xx&oh=b5779237d5e3a4bc96cea5581ef087d9&oe=5FEE8F97);
 }
 
 .p-2,

@@ -14,6 +14,7 @@
     "aos": "^2.3.4",
     "gridsome": "^0.7.0",
     "gridsome-plugin-modal": "^0.1.1",
+    "gridsome-plugin-purgecss": "^1.0.12",
     "gridsome-plugin-seo": "^1.0.1",
     "gridsome-scroll-reveal": "^1.0.11",
     "vue-glide-js": "^1.3.14",

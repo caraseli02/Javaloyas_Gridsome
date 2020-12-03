@@ -5,6 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
+  mode: "production",
+
   siteName: "Los Javaloyas",
   siteDescription:
     "Los Javaloyas es uno de los conjuntos más populares y asociados a la música pop española. El grupo en activo mas veterano de España.",
@@ -22,6 +24,20 @@ module.exports = {
     },
     {
       use: "gridsome-plugin-seo",
+    },
+    {
+      use: "gridsome-plugin-purgecss",
+      // default options, the following will be included if you don't provide anything
+      options: {
+        content: [
+          "./src/**/*.vue",
+          "./src/**/*.js",
+          "./src/**/*.jsx",
+          "./src/**/*.pug",
+          "./src/**/*.md",
+        ],
+        defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+      },
     },
   ],
 

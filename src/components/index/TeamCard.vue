@@ -7,11 +7,7 @@
         </div>
       </div>
       <!-- Trainer Card Wrapper -->
-      <vue-glide
-        v-scroll-reveal.reset="{ delay: 350 }"
-        class=""
-        :options="options"
-      >
+      <vue-glide class="" :options="options">
         <template slot="control">
           <button
             class="absolute w-full h-12 flex justify-center mt-10 text-xl border-0 outline-none animate-pulse"

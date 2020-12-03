@@ -15,8 +15,9 @@ import "vue-glide-js/dist/vue-glide.css";
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
-  // Set default layout as a global component
-  Vue.component("Layout", DefaultLayout);
+  mode: "production",
+    // Set default layout as a global component
+    Vue.component("Layout", DefaultLayout);
 
   //Custom default options for all uses of the directive
   Vue.use(VueScrollReveal, {

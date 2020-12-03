@@ -870,6 +870,14 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
+"@fullhuman/postcss-purgecss@latest":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-3.0.0.tgz#e39bf7a7d2a2c664ed151b639785b2efcbca33ff"
+  integrity sha512-cvuOgMwIVlfgWcUMqg5p33NbGUxLwMrKtDKkm3QRfOo4PRVNR6+y/xd9OyXTVZiB1bIpKNJ0ZObYPWD3DRQDtw==
+  dependencies:
+    postcss "7.0.32"
+    purgecss "^3.0.0"
+
 "@glidejs/glide@^3.2.4":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.4.1.tgz#8ad21f3169076e32bbfd75ed0753807662c25e90"
@@ -2598,6 +2606,11 @@ commander@^5.0.0:
   version "5.1.0"
   resolved "https://registry.npmjs.org/commander/-/commander-5.1.0.tgz"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+
+commander@^6.0.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.0.tgz#b990bfb8ac030aedc6d11bc04d1488ffef56db75"
+  integrity sha512-zP4jEKbe8SHzKJYQmq8Y9gYjtO/POJLgIdKgV7B9qNmABVFVc+ctqSX6iXh4mCpJfRBOabiZ2YKPg8ciDw6C+Q==
 
 commander@~2.19.0:
   version "2.19.0"
@@ -4580,6 +4593,13 @@ gridsome-plugin-modal@^0.1.1:
   integrity sha512-2L8ARFcbUFk5OTPpZgrxcBkTcvR5m2PjiPkF3lgRiajttcjbMrXYSemeZRztAjw3cOtCTvr+kyGpcBE6M4CSVA==
   dependencies:
     vue-js-modal "^1.3.28"
+
+gridsome-plugin-purgecss@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-purgecss/-/gridsome-plugin-purgecss-1.0.12.tgz#dd927c2bd44e04ad08d67fbd5126fe0e1357feef"
+  integrity sha512-SWYUKV2jb0RJrxgLzOx6wKJzEtNu79bzZuZDNMyVH+NqouFGqJQDUUaQqZpKQmgGMdb0P8gAwLx4KQBTYWvFBw==
+  dependencies:
+    "@fullhuman/postcss-purgecss" latest
 
 gridsome-plugin-seo@^1.0.1:
   version "1.0.1"
@@ -8130,6 +8150,16 @@ purgecss@^2.3.0:
   integrity sha512-BE5CROfVGsx2XIhxGuZAT7rTH9lLeQx/6M0P7DTXQH4IUc3BBzs9JUzt4yzGf3JrH9enkeq6YJBe9CTtkm1WmQ==
   dependencies:
     commander "^5.0.0"
+    glob "^7.0.0"
+    postcss "7.0.32"
+    postcss-selector-parser "^6.0.2"
+
+purgecss@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-3.0.0.tgz#039c191871bb999894222a00c4c8b179fccdb043"
+  integrity sha512-t3FGCwyX9XWV3ffvnAXTw6Y3Z9kNlcgm14VImNK66xKi5sdqxSA2I0SFYxtmZbAKuIZVckPdazw5iKL/oY/2TA==
+  dependencies:
+    commander "^6.0.0"
     glob "^7.0.0"
     postcss "7.0.32"
     postcss-selector-parser "^6.0.2"
