@@ -20,6 +20,7 @@
     <g-image
       class="static lg:bottom-0 h-auto lg:w-4/5 xl:w-3/5 flex lg:right-0 mx-auto lg:rounded-lg lg:border-solid lg:border-64 lg:border-black z-20"
       src="@/assets/img/landing1.jpg"
+      alt="Los javaloyas, conjuntos más populares y asociados a la música pop española"
     >
       <span
         id="blackOverlay"
@@ -33,7 +34,7 @@
       <div class="items-end flex flex-wrap">
         <div class="w-full px-8 lg:px-32 ml-auto mr-auto text-center">
           <div>
-            <h3 class="font-semibold text-3xl lg:text-4xl mt-6">
+            <h1 class="font-semibold text-3xl lg:text-4xl mt-6">
               Historia viva de la
               <div
                 class="text-red-700"
@@ -72,7 +73,7 @@
                   </svg>
                 </button>
               </div>
-            </h3>
+            </h1>
             <audio
               class="w-full hidden"
               controls
@@ -82,10 +83,10 @@
               Your browser does not support the
               <code>audio</code> element.
             </audio>
-            <p class="mt-2 text-lg">
+            <h2 class="mt-2 text-lg">
               Los Javaloyas es uno de los conjuntos más populares y asociados a
               la música pop española. El grupo en activo mas veterano de España.
-            </p>
+            </h2>
             <div class="flex justify-center">
               <a
                 href="#contact"

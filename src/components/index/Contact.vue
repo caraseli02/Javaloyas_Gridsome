@@ -24,9 +24,9 @@
           class="flex flex-col flex-wrap text-center justify-center items-center"
         >
           <div class="w-full lg:w-6/12 px-4">
-            <h2 class="text-4xl font-semibold text-black uppercase">
+            <h3 class="text-4xl font-semibold text-black uppercase">
               Medios de contacto
-            </h2>
+            </h3>
           </div>
           <ul class="block md:flex justify-around items-center w-1/2 mx-auto">
             <li class="mt-2 p-4 bg-blue-800 w-32 rounded-lg mx-auto">

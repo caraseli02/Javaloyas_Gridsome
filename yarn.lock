@@ -870,13 +870,18 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
-"@fullhuman/postcss-purgecss@latest":
+"@fullhuman/postcss-purgecss@^3.0.0", "@fullhuman/postcss-purgecss@latest":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-3.0.0.tgz#e39bf7a7d2a2c664ed151b639785b2efcbca33ff"
   integrity sha512-cvuOgMwIVlfgWcUMqg5p33NbGUxLwMrKtDKkm3QRfOo4PRVNR6+y/xd9OyXTVZiB1bIpKNJ0ZObYPWD3DRQDtw==
   dependencies:
     postcss "7.0.32"
     purgecss "^3.0.0"
+
+"@fullhuman/vue-cli-plugin-purgecss@~3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@fullhuman/vue-cli-plugin-purgecss/-/vue-cli-plugin-purgecss-3.0.1.tgz#11cb7193615f11a20f374cb4e6ddba56615be9f3"
+  integrity sha512-m3Gi/EIreSM+DHZThfDPFtsy14AZBvdzU2kG6Wu/lkypTzewxR1OKGePu1lBvrVZ1/kE67lIr5D49rqS17dseA==
 
 "@glidejs/glide@^3.2.4":
   version "3.4.1"

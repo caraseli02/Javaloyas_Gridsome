@@ -11,6 +11,7 @@
             :fit-parent="true"
             :video-id="videoId"
             ref="youtube"
+            title="los javaloyas"
           ></youtube>
           <section class="flex flex-col overflow-auto h-32 bg-gray-900">
             <!-- <g-image
@@ -40,7 +41,7 @@
         v-scroll-reveal.reset="{ delay: 250 }"
         class="spotify mb-6 flex justify-center flex-col"
       >
-        <h3 class="text-center sm:text-left">Spotify</h3>
+        <h4 class="text-center sm:text-left">Spotify</h4>
         <iframe
           class="self-center"
           src="https://open.spotify.com/embed/artist/6FD45UyvpKzwYnQDF8NrLC"

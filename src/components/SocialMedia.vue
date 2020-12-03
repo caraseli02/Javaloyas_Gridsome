@@ -1,6 +1,6 @@
 <template>
   <section class="social">
-    <a
+    <g-link
       href="https://www.facebook.com/losjavaloyas.javaloyas"
       target="_blank"
       class="fb"
@@ -13,7 +13,7 @@
           d="M10,0.5c-5.247,0-9.5,4.253-9.5,9.5c0,5.247,4.253,9.5,9.5,9.5c5.247,0,9.5-4.253,9.5-9.5C19.5,4.753,15.247,0.5,10,0.5 M10,18.637c-4.77,0-8.636-3.867-8.636-8.637S5.23,1.364,10,1.364S18.637,5.23,18.637,10S14.77,18.637,10,18.637 M10.858,7.949c0-0.349,0.036-0.536,0.573-0.536h0.719v-1.3H11c-1.38,0-1.866,0.65-1.866,1.743v0.845h-0.86V10h0.86v3.887h1.723V10h1.149l0.152-1.299h-1.302L10.858,7.949z"
         ></path>
       </svg>
-    </a>
+    </g-link>
     <a
       href="https://www.youtube.com/results?search_query=los+javaloyas"
       target="_blank"

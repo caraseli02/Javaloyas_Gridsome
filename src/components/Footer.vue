@@ -3,8 +3,13 @@
     <div class="container mx-auto flex flex-wrap">
       <div class="w-full md:w-3/6">
         <div class="mb-3 md:mb-0 pr-0 md:pr-10">
-          <h3 class="text-xl">Los Javaloyas</h3>
-          <p class="text-sm mt-2">
+          <h3 class="clampTitle flex justify-center items-center">
+            Los
+            <g-image class="p-1 w-24 h-24" src="@/favicon.png"></g-image
+            >avaloyas
+          </h3>
+
+          <!-- <p class="text-sm mt-2">
             Suscribe nuestra newsletter para que seas el primero en descubrir
             los proximos eventos.
           </p>
@@ -25,66 +30,51 @@
                 Sign Up
               </button>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
       <div class="w-full md:w-1/6">
-        <div class="mb-3 md:mb-0">
-          <span class="text-lg">Legal</span>
-          <ul class="">
-            <li class="mt-2">
-              <g-link to="/legal/cookies" class="hover:text-white"
-                >Cookies</g-link
-              >
-            </li>
-            <li class="mt-2">
-              <g-link to="/legal/terms/" class="hover:text-white"
-                >Términos</g-link
-              >
-            </li>
-            <li class="mt-2">
-              <g-link to="/legal/privacy/" class="hover:text-white"
-                >Política de privacidad</g-link
-              >
-            </li>
-          </ul>
+        <div class="mb-3 md:mb-0 flex flex-col">
+          <span class="clampLinkTitle text-bold">Legal</span>
+
+          <span v-for="(item, i) in legal" :key="i" class="mt-2 w-24">
+            <g-link :to="item.link" class="hover:text-white">{{
+              item.name
+            }}</g-link>
+          </span>
         </div>
       </div>
       <div class="w-full md:w-1/6">
-        <div class="mb-3 md:mb-0">
-          <span class="text-lg">Contacto</span>
-          <ul class="">
-            <li class="mt-2">
-              <a href="tel:+34610-662-929" class="hover:text-white">Telefono</a>
-            </li>
-            <li class="mt-2">
-              <a href="https://wa.me/34610-662-929" class="hover:text-white"
-                >Whatsapp</a
-              >
-            </li>
-            <li class="mt-2">
-              <a
-                href="mailto:mariajavaloyas1969@gmail.com"
-                class="hover:text-white"
-                >Email</a
-              >
-            </li>
-          </ul>
+        <div class="mb-3 md:mb-0 flex flex-col">
+          <span class="clampLinkTitle text-bold">Contacto</span>
+          <span class="mt-2">
+            <a href="tel:+34610-662-929" class="hover:text-white">Telefono</a>
+          </span>
+          <span class="mt-2">
+            <a href="https://wa.me/34610-662-929" class="hover:text-white"
+              >Whatsapp</a
+            >
+          </span>
+          <span class="mt-2">
+            <a
+              href="mailto:mariajavaloyas1969@gmail.com"
+              class="hover:text-white"
+              >Email</a
+            >
+          </span>
         </div>
       </div>
       <div class="w-full md:w-1/6">
-        <div class="mb-3 md:mb-0">
-          <span class="text-lg">Social</span>
-          <ul class="">
-            <li class="mt-2">
-              <a
-                href="https://www.facebook.com/losjavaloyas.javaloyas"
-                target="_blank"
-                class="hover:text-white"
-                >Facebook</a
-              >
-            </li>
-          </ul>
+        <div class="mb-3 md:mb-0 flex flex-col">
+          <span class="clampLinkTitle text-bold">Social</span>
+          <span class="mt-2">
+            <a
+              href="https://www.facebook.com/losjavaloyas.javaloyas"
+              target="_blank"
+              class="hover:text-white"
+              >Facebook</a
+            >
+          </span>
         </div>
       </div>
     </div>
@@ -92,10 +82,40 @@
 </template>
 
 <script>
+import Logo from "~/components/Logo.vue";
+
 export default {
   name: "Footer",
+  data() {
+    return {
+      legal: [
+        { name: "Cookies", link: "legal/cookies" },
+        { name: "Términos", link: "legal/terms" },
+        { name: "Política de privacidad", link: "legal/privacy" },
+      ],
+    };
+  },
+  components: {
+    Logo,
+  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.clampTitle {
+  font-size: clamp(1rem, 10vw, 2rem);
+}
+.clampLinkTitle {
+  font-size: clamp(1.7rem, 2.7vw, 4rem);
+  position: relative;
+}
+.clampLinkTitle::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  border-bottom: 2px solid red;
+}
 </style>
