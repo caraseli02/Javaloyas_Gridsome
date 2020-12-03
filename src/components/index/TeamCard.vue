@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <div class="flex flex-wrap justify-center text-center mb-24">
         <div class="w-full lg:w-6/12 px-4">
-          <h2 class="text-4xl font-semibold uppercase">Banda</h2>
+          <h3 class="text-4xl font-semibold uppercase">Banda</h3>
         </div>
       </div>
       <!-- Trainer Card Wrapper -->
