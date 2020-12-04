@@ -60,22 +60,36 @@
               class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg"
               v-scroll-reveal.reset
             >
-              <div
+              <form
+                name="contact"
+                method="post"
+                v-on:submit.prevent="handleSubmit"
+                action="/success/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 class="setRgba flex-auto p-5 lg:p-10 bg-transparent text-black"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don’t fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <h4 class="text-2xl font-semibold text-black">
                   Escribe tu mensaje
                 </h4>
                 <div class="relative w-full mb-3 mt-8">
                   <label
-                    class="block uppercase text-xs font-bold mb-2"
-                    for="full-name"
+                    class="label block uppercase text-xs font-bold mb-2"
+                    for="name"
                     >Nombre</label
                   ><input
                     type="text"
                     class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                     placeholder="Full Name"
                     style="transition: all 0.15s ease 0s"
+                    name="name"
+                    v-model="formData.name"
                   />
                 </div>
                 <div class="relative w-full mb-3">
@@ -88,6 +102,8 @@
                     class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                     placeholder="Email"
                     style="transition: all 0.15s ease 0s"
+                    name="email"
+                    v-model="formData.email"
                   />
                 </div>
                 <div class="relative w-full mb-3">
@@ -100,18 +116,20 @@
                     cols="80"
                     class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                     placeholder="Type a message..."
+                    name="message"
+                    v-model="formData.message"
                   ></textarea>
                 </div>
                 <div class="text-center mt-6">
                   <button
                     class="bg-green-900 text-white active:bg-green-500 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                    type="button"
+                    type="submit"
                     style="transition: all 0.15s ease 0s"
                   >
                     Enviar
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -123,6 +141,32 @@
 <script>
 export default {
   name: "Contact",
+  data() {
+    return {
+      formData: {},
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData,
+        }),
+      })
+        .then(() => this.$router.push("/success"))
+        .catch((error) => alert(error));
+    },
+  },
 };
 </script>
 

@@ -106,7 +106,7 @@ export default {
   font-size: clamp(1rem, 10vw, 2rem);
 }
 .clampLinkTitle {
-  font-size: clamp(1.7rem, 2.7vw, 4rem);
+  font-size: clamp(1.5rem, 2.7vw, 4rem);
   position: relative;
 }
 .clampLinkTitle::before {

@@ -21,42 +21,15 @@ module.exports = {
     },
     {
       use: "gridsome-plugin-tailwindcss",
+      options: {
+        tailwindConfig: "./tailwind.config.js",
+        presetEnvConfig: {},
+        shouldImport: false,
+        shouldTimeTravel: false,
+      },
     },
     {
       use: "gridsome-plugin-seo",
-    },
-    {
-      use: "gridsome-plugin-purgecss",
-      // default options, the following will be included if you don't provide anything
-      options: {
-        content: [
-          "./src/**/*.vue",
-          "./src/**/*.js",
-          "./src/**/*.jsx",
-          "./src/**/*.pug",
-          "./src/**/*.md",
-        ],
-        defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-      },
-    },
-    {
-      content: [`./public/**/*.html`, `./src/**/*.vue`],
-      defaultExtractor(content) {
-        const contentWithoutStyleBlocks = content.replace(
-          /<style[^]+?<\/style>/gi,
-          ""
-        );
-        return (
-          contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) ||
-          []
-        );
-      },
-      safelist: [
-        /-(leave|enter|appear)(|-(to|from|active))$/,
-        /^(?!(|.*?:)cursor-move).+-move$/,
-        /^router-link(|-exact)-active$/,
-        /data-v-.*/,
-      ],
     },
   ],
 
