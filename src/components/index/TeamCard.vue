@@ -53,13 +53,13 @@
         >
           <div class="pr-8">
             <g-image
-              alt="los javaloyas"
+              :alt="`${member.name} los javaloyas`"
               :src="require(`!!assets-loader!@img/${member.img}.png`)"
               class="shadow-lg rounded mx-auto"
             />
             <div class="pt-6 text-center">
               <h3 class="text-xl font-bold">{{ member.name }}</h3>
-              <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+              <p class="mt-1 text-sm uppercase font-semibold">
                 {{ member.inst }}
               </p>
             </div>

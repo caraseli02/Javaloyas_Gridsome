@@ -14,14 +14,6 @@
             title="los javaloyas"
           ></youtube>
           <section class="flex flex-col overflow-auto h-32 bg-gray-900">
-            <!-- <g-image
-              v-for="(photo, index) in photos"
-              :src="photo"
-              :key="index"
-              @click="activePhoto = index"
-              :class="{ active: activePhoto == index }"
-              :style="'background-image: url(' + photo + ')'"
-            ></g-image> -->
             <span class="w-8 h-8 border-b-1 border-red-900 block"></span>
             <span
               v-for="(v, index) in videoList"
@@ -41,7 +33,7 @@
         v-scroll-reveal.reset="{ delay: 250 }"
         class="spotify mb-6 flex justify-center flex-col"
       >
-        <h4 class="text-center sm:text-left">Spotify</h4>
+        <span class="text-center sm:text-left text-4xl my-6">Spotify</span>
         <iframe
           class="self-center"
           src="https://open.spotify.com/embed/artist/6FD45UyvpKzwYnQDF8NrLC"

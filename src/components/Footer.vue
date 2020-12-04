@@ -5,7 +5,11 @@
         <div class="mb-3 md:mb-0 pr-0 md:pr-10">
           <h3 class="clampTitle flex justify-center items-center">
             Los
-            <g-image class="p-1 w-24 h-24" src="@/favicon.png"></g-image
+            <g-image
+              alt="Logo Los Javaloyas"
+              class="p-1 w-24 h-24"
+              src="@/favicon.png"
+            ></g-image
             >avaloyas
           </h3>
 
@@ -103,10 +107,10 @@ export default {
 
 <style scoped lang="scss">
 .clampTitle {
-  font-size: clamp(1rem, 10vw, 2rem);
+  font-size: clamp(1rem, 10vw, 2.5rem);
 }
 .clampLinkTitle {
-  font-size: clamp(1.5rem, 2.7vw, 4rem);
+  font-size: clamp(1.5rem, 2.7vw, 1.7rem);
   position: relative;
 }
 .clampLinkTitle::before {

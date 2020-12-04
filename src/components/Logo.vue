@@ -1,7 +1,11 @@
 <template>
   <g-link class="logo setBg rounded-full w-12 h-12" to="/">
     <span class="logo__text font-bold bg-white">
-      <g-image class="p-1 w-12 h-12" src="@/favicon.png"></g-image>
+      <g-image
+        alt="Logo Log Javaloyas"
+        class="p-1 w-12 h-12"
+        src="@/favicon.png"
+      ></g-image>
     </span>
   </g-link>
 </template>

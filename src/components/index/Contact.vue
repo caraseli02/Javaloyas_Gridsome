@@ -89,6 +89,7 @@
                     placeholder="Full Name"
                     style="transition: all 0.15s ease 0s"
                     name="name"
+                    id="name"
                     v-model="formData.name"
                   />
                 </div>
@@ -99,6 +100,7 @@
                     >Email</label
                   ><input
                     type="email"
+                    id="email"
                     class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                     placeholder="Email"
                     style="transition: all 0.15s ease 0s"
@@ -117,6 +119,7 @@
                     class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                     placeholder="Type a message..."
                     name="message"
+                    id="message"
                     v-model="formData.message"
                   ></textarea>
                 </div>
