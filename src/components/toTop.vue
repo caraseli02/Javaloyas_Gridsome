@@ -1,7 +1,7 @@
 <template>
   <a
     @click="scrollTop"
-    class="fixed bottom-0 right-0 mr-8 mb-8 z-20 border-1 border-black"
+    class="setPosition z-20 border-1 border-black"
     v-if="position[1] > 0"
   >
     <svg
@@ -46,4 +46,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.setPosition {
+  position: fixed;
+  bottom: 12vh;
+  right: 25px;
+  margin: auto;
+  z-index: 100;
+  background-color: white;
+  border-radius: 20px;
+}
 </style>

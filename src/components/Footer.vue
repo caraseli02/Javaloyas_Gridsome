@@ -75,6 +75,7 @@
             <a
               href="https://www.facebook.com/losjavaloyas.javaloyas"
               target="_blank"
+              rel="noopener"
               class="hover:text-white"
               >Facebook</a
             >
