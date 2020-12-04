@@ -102,12 +102,12 @@ export default {
         },
         {
           name: "Daniel Salva",
-          inst: "Bajo",
+          inst: "Voz, Bajo",
           img: "Daniel",
         },
         {
           name: "Leo Villar W",
-          inst: "Bateria, Trompeta",
+          inst: "Voz, Bateria, Trompeta",
           img: "Leo",
         },
         {
