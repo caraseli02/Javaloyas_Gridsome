@@ -34,7 +34,6 @@
           v-if="!hidden"
           class="absolute ml-4 mb-4 bottom-0 left-0 transform -rotate-90 z-0"
         >
-          <span>scroll </span>
           <svg
             class="animate-bounce w-6 h-6 text-center pl-2"
             fill="none"

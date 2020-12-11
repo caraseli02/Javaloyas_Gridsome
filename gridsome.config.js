@@ -17,6 +17,13 @@ module.exports = {
 
   plugins: [
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Events",
+        path: "./content/events/**/*.md",
+      },
+    },
+    {
       use: "gridsome-plugin-modal",
     },
     {

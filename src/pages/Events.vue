@@ -4,7 +4,9 @@
       class="setBg flex min-h-screen justify-around items-center flex-wrap"
     >
       <g-link
-        href="https://www.truiteatre.es/"
+        v-for="edge in $page.allEvents.edges"
+        :key="edge.node.id"
+        :href="edge.node.url_link"
         class="pseudo-parallax-card-container flex flex-row"
       >
         <div class="mock top left"></div>
@@ -12,7 +14,10 @@
         <div class="mock bottom left"></div>
         <div class="mock bottom right"></div>
 
-        <div class="content-container flex">
+        <div
+          class="content-container flex"
+          :style="{ backgroundImage: `url(${edge.node.cover_image})` }"
+        >
           <div class="controls-container flex flex-row">
             <span class="control"></span>
             <span class="control"></span>
@@ -62,6 +67,21 @@ export default {
   },
 };
 </script>
+
+<page-query>
+query {
+  allEvents {
+    edges {
+      node {
+        id
+        title
+        url_link
+        cover_image (width: 770, height: 380, blur: 10)
+      }
+    }
+  }
+}
+</page-query>
 
 <style scoped lang="scss">
 .setBg {
@@ -130,7 +150,6 @@ $card-height: 450px;
   width: $card-width;
   height: $card-height;
   text-align: center;
-  background-image: url(../assets/img/eventos.jpg);
   background-size: cover;
   border-radius: 10px;
   //    cursor: pointer;
