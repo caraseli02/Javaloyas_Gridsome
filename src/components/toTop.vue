@@ -48,8 +48,8 @@ export default {
 <style lang="scss" scoped>
 .setPosition {
   position: fixed;
-  bottom: 12vh;
-  right: 25px;
+  bottom: 2vh;
+  right: 45px;
   margin: auto;
   z-index: 100;
   background-color: white;

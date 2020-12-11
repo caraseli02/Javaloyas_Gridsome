@@ -85,7 +85,7 @@
             </audio>
             <h2 class="mt-2 text-lg">
               Los Javaloyas es uno de los conjuntos más populares y asociados a
-              la música pop española. El grupo en activo mas veterano de España.
+              la música pop española. El grupo en activo más veterano de España.
             </h2>
             <div class="flex justify-center">
               <a

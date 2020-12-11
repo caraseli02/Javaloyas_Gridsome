@@ -1,6 +1,6 @@
 <template>
   <section class="ml-4">
-    <social-media />
+    <social-media class="z-30" />
     <div class="nav">
       <div class="nav-wrapper">
         <nav class="nav_xs md:max-w-sm">

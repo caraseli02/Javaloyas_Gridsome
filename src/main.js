@@ -1,6 +1,5 @@
 // Import main css
 import "~/assets/style/index.scss";
-import VueYoutube from "vue-youtube";
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from "~/layouts/Default.vue";
@@ -26,6 +25,4 @@ export default function(Vue, { router, head, isClient }) {
     distance: "10px",
     mobile: false,
   });
-
-  Vue.use(VueYoutube);
 }

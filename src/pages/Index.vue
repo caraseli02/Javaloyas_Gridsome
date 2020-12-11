@@ -2,7 +2,7 @@
   <Layout :show-logo="false">
     <toTop />
     <Hero id="top" />
-    <About class="z-10" />
+    <About />
     <TeamCard />
     <Contact />
   </Layout>

@@ -3,7 +3,7 @@
     <g-link
       href="https://www.facebook.com/losjavaloyas.javaloyas"
       target="_blank"
-      class="fb flex justify-around items-center"
+      class="fb flex justify-around items-center mr-2"
       rel="noopener"
       v-on:mouseover="fbover"
       v-on:mouseleave="fbleave"
@@ -21,7 +21,7 @@
     <g-link
       href="https://www.youtube.com/results?search_query=los+javaloyas"
       target="_blank"
-      class="you flex justify-around items-center"
+      class="you flex justify-around items-center mr-2"
       rel="noopener"
       v-on:mouseover="youover"
       v-on:mouseleave="youleave"
@@ -68,8 +68,8 @@ export default {
 <style lang="scss" scoped>
 .fb {
   position: fixed;
-  bottom: 6.5vh;
-  right: 20px;
+  bottom: 12.5vh;
+  right: 40px;
   margin: auto;
   z-index: 100;
   background-color: white;
@@ -86,8 +86,8 @@ export default {
 }
 .you {
   position: fixed;
-  bottom: 1.5vh;
-  right: 20px;
+  bottom: 7vh;
+  right: 40px;
   margin: auto;
   z-index: 100;
   background-color: white;

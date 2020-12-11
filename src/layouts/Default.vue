@@ -63,11 +63,11 @@ export default {
     background-image: none;
   }
 
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
+  // @media screen and (min-width: 1300px) {
+  //   //Make header sticky for large screens
+  //   position: sticky;
+  //   width: 100%;
+  // }
 }
 
 .main {

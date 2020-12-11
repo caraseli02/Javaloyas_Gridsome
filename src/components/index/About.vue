@@ -7,19 +7,25 @@
           class="w-full flex flex-col justify-center ml-auto mr-2"
           v-scroll-reveal.reset
         >
-          <youtube
+          <!-- <youtube
             :fit-parent="true"
             :video-id="videoId"
             ref="youtube"
             title="los javaloyas"
-          ></youtube>
-          <section class="flex flex-col overflow-auto h-32 bg-gray-900">
+          ></youtube> -->
+          <iframe
+            class="h-64"
+            :src="`https://www.youtube.com/embed/${videoId}`"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <section class="flex flex-col setOverflow h-32 bg-gray-900">
             <span class="w-8 h-8 border-b-1 border-red-900 block"></span>
             <span
               v-for="(v, index) in videoList"
               :key="index"
               @click="changeVidio(v.id)"
-              class="w-full h-10 cursor-pointer p-1 flex justify-between"
+              class="w-full cursor-pointer p-1 flex justify-between mb-4"
             >
               <div>
                 <span class="m-2 md:ml-4"> {{ index + 1 }}</span> {{ v.name }}
@@ -89,17 +95,9 @@ export default {
   methods: {
     changeVidio(id) {
       this.videoId = id;
-      this.playVideo();
-    },
-    playVideo() {
-      this.player.playVideo();
     },
   },
-  computed: {
-    player() {
-      return this.$refs.youtube.player;
-    },
-  },
+  created() {},
 };
 </script>
 
@@ -112,5 +110,10 @@ export default {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(30px);
   padding: 2%;
+}
+
+.setOverflow {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 </style>
