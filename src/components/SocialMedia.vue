@@ -68,7 +68,7 @@ export default {
 <style lang="scss" scoped>
 .fb {
   position: fixed;
-  bottom: 6.5vh;
+  bottom: 7vh;
   right: 20px;
   margin: auto;
   z-index: 100;
@@ -86,7 +86,7 @@ export default {
 }
 .you {
   position: fixed;
-  bottom: 0.5vh;
+  bottom: 1vh;
   right: 20px;
   margin: auto;
   z-index: 100;
