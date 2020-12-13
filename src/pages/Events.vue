@@ -14,7 +14,7 @@
         <div class="mock bottom left"></div>
         <div class="mock bottom right"></div>
 
-        <g-image
+        <div
           class="content-container flex"
           :style="{ backgroundImage: `url(/${edge.node.cover_image})` }"
         >
@@ -39,7 +39,7 @@
             </div>
           </div>
           w
-        </g-image>
+        </div>
       </g-link>
     </section>
   </layout>
