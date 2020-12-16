@@ -1,5 +1,28 @@
 <template>
   <footer class="lg:px-16 px-8 py-10 pb-15 shadow-md">
+    <!-- Cookies Modal -->
+    <cookie-law buttonText="Aceptar" theme="royal">
+      <div slot="message" class="md:mx-16 text-sm">
+        <span class="text-xl">🍪Cookies🍪</span>
+        <p class="text-lg">
+          Este sitio web utiliza cookies para mejorar su experiencia de
+          navegación.
+        </p>
+        Estas cookies son necesarias para el correcto funcionamiento de la
+        Plataforma y no se pueden desactivar en nuestros sistemas. En términos
+        generales, están configurados para responder a las acciones que usted
+        realiza al solicitar servicios, como ajustar sus preferencias de
+        privacidad, iniciar sesión en su cuenta o completar formularios. Puede
+        configurar su navegador para que bloquee estas cookies o le avise cuando
+        estén presentes; sin embargo, algunas partes de la plataforma no
+        funcionarán sin ellos.
+        <p>
+          Consulta más información en
+          <router-link to="legal/cookies">Política de cookies.</router-link>
+        </p>
+      </div>
+    </cookie-law>
+    <!-- Cookies Modal -->
     <div class="container mx-auto flex flex-wrap">
       <div class="w-full md:w-3/6">
         <div class="mb-3 md:mb-0 pr-0 md:pr-10">
@@ -87,6 +110,7 @@
 </template>
 
 <script>
+import CookieLaw from "vue-cookie-law";
 import Logo from "~/components/Logo.vue";
 
 export default {
@@ -102,6 +126,7 @@ export default {
   },
   components: {
     Logo,
+    CookieLaw,
   },
 };
 </script>
