@@ -1,10 +1,10 @@
 <template>
   <layout>
-    <div class="ml-10 mt-6">
-      <!--<div class="cursor" id="cursor"></div>-->
-      <!-- <div class="progress" v-if="!hidden">
+    <!-- <div class="ml-10 mt-6">
+      <div class="cursor" id="cursor"></div>
+       <div class="progress" v-if="!hidden">
         <div class="progress__bar" :style="{ width : `${progressWidth}%` }"></div>
-      </div> -->
+      </div>
       <div
         class="full-screen"
         :style="{ backgroundImage: `url(${fullScreenImage})` }"
@@ -47,11 +47,14 @@
           </svg>
         </div>
       </article>
-    </div>
+    </div> -->
+    <About />
   </layout>
 </template>
 
 <script>
+
+import About from "../components/media/About";
 export default {
   name: "Media",
   metaInfo() {
@@ -124,6 +127,9 @@ export default {
       this.scrollCount = scrollPosition;
     },
   },
+  components: {
+    About
+  }
 };
 </script>
 

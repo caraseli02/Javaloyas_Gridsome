@@ -50,19 +50,11 @@ export default {
           // if user consent is true
           // this.$ga.enable()
           // this.consent = true;
-          console.log('consinet change');
         } else {
           // if user consent is false
           // this.$ga.disable()
         }
       }
-    }
-  },
-  created () {
-  if(document.cookie){
-      console.log('cookie: exist');
-    }else{
-      this.$router.push("/consent/").catch(()=>{});
     }
   }
 };
