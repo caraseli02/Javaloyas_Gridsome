@@ -18,9 +18,9 @@
     "gridsome-plugin-purgecss": "^1.0.12",
     "gridsome-plugin-seo": "^1.0.1",
     "gridsome-scroll-reveal": "^1.0.11",
+    "klaro-gridsome": "^1.0.3",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
-    "vue-cookie-law": "^1.13.3",
     "vue-glide-js": "^1.3.14"
   },
   "devDependencies": {

@@ -1,9 +1,7 @@
 <template>
   <footer class="lg:px-16 px-8 py-10 pb-15 shadow-md">
     <!-- Cookies Modal -->
-    <ClientOnly>
-      <cookie-law buttonText="Aceptar" theme="royal">
-        <div slot="message" class="md:mx-16 text-sm">
+    <!-- <div slot="message" class="md:mx-16 text-sm">
           <span class="text-xl">🍪Cookies🍪</span>
           <p class="text-lg">
             Este sitio web utiliza cookies para mejorar su experiencia de
@@ -21,9 +19,7 @@
             Consulta más información en
             <router-link to="legal/cookies">Política de cookies.</router-link>
           </p>
-        </div>
-      </cookie-law>
-    </ClientOnly>
+        </div> -->
     <!-- Cookies Modal -->
     <div class="container mx-auto flex flex-wrap">
       <div class="w-full md:w-3/6">
@@ -127,10 +123,6 @@ export default {
   },
   components: {
     Logo,
-    CookieLaw: () =>
-      import("vue-cookie-law")
-        .then((m) => m.CookieLaw)
-        .catch(),
   },
 };
 </script>

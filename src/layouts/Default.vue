@@ -35,6 +35,36 @@ export default {
     Logo,
     ToggleTheme,
   },
+  mounted() {
+    document.addEventListener('consentUpdate', this.consentToggle)
+  },
+  beforeDestroy() {
+    document.removeEventListener('consentUpdate', this.consentToggle)
+  },
+  methods: {
+    consentToggle(event) {
+      console.log('consinet change');
+      // only is app is google analytics
+      if (event.detail.app === 'googleAnalytics') {
+        if (event.detail.consent) {
+          // if user consent is true
+          // this.$ga.enable()
+          // this.consent = true;
+          console.log('consinet change');
+        } else {
+          // if user consent is false
+          // this.$ga.disable()
+        }
+      }
+    }
+  },
+  created () {
+  if(document.cookie){
+      console.log('cookie: exist');
+    }else{
+      this.$router.push("/consent/").catch(()=>{});
+    }
+  }
 };
 </script>
 

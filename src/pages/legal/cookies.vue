@@ -159,6 +159,52 @@
         </p>
       </li>
     </ul>
+    <h4>gtag.js and analytics.js set the following cookies:</h4>
+    <div class="devsite-table-wrapper"><table>
+  <tbody><tr>
+    <th>Cookie Name</th>
+    <th>Expiration Time</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code translate="no" dir="ltr">_<wbr>ga</code></td>
+    <td>2 years</td>
+    <td>Used to distinguish users.</td>
+  </tr>
+  <tr>
+    <td><code translate="no" dir="ltr">_<wbr>gid</code></td>
+    <td>24 hours</td>
+    <td>Used to distinguish users.</td>
+  </tr>
+  <tr>
+    <td><code translate="no" dir="ltr">_<wbr>gat</code></td>
+    <td>1 minute</td>
+    <td>Used to throttle request rate. If Google Analytics is deployed via Google Tag Manager, this
+      cookie will be named <code translate="no" dir="ltr">_<wbr>dc_<wbr>gtm_<wbr>&lt;property-id&gt;</code>.</td>
+  </tr>
+  <tr>
+    <td><code translate="no" dir="ltr">AMP_<wbr>TOKEN</code></td>
+    <td>30 seconds to 1 year</td>
+    <td>Contains a token that can be used to retrieve a Client ID from AMP Client ID service. Other
+      possible values indicate opt-out, inflight request or an error retrieving a Client ID from AMP
+      Client ID service.</td>
+  </tr>
+  <tr>
+    <td><code translate="no" dir="ltr">_<wbr>gac_<wbr>&lt;property-id&gt;</code></td>
+    <td>90 days</td>
+    <td>Contains campaign related information for the user. If you have
+      linked your Google Analytics and Google Ads accounts, Google Ads
+      website conversion tags will read this cookie unless you opt-out. <a href="//support.google.com/google-ads/answer/7521212">Learn more</a>. </td>
+  </tr>
+    </tbody></table></div>
+    <br>
+    <h5>YouTube cookies</h5>
+    <p>We embed videos from our official YouTube channel using YouTube's privacy-enhanced mode. This mode may set cookies on your computer once you click on accept cookies, but YouTube will not store personally-identifiable cookie information for playbacks of embedded videos using the privacy-enhanced mode. To find out more please visit&nbsp;<a href="http://www.google.com/support/youtube/bin/answer.py?hl=en-GB&amp;answer=171780" target="_blank">YouTube's embedding videos information page</a>.</p>
+    <p>Our websites contain links to other sites, including those of sponsors and advertisers, whose information practices may be different from ours.</p>
+    <br>
+    <h5>Spotify cookies</h5>
+    <p>We embed audio from our official Spotify channel using Spotify's privacy-enhanced mode. This mode may set cookies on your computer once you click on accept cookies, but YouTube will not store personally-identifiable cookie information for playbacks of embedded videos using the privacy-enhanced mode. To find out more please visit&nbsp;<a href="https://developer.spotify.com/documentation/widgets/terms/" target="_blank">Widget Terms of Use</a>.</p>
+    <br>
     <p>
       For any other web browser, please visit your web browser's official web
       pages.
