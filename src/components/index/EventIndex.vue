@@ -1,22 +1,24 @@
 <template>
-  <section id="about" class="setBg relative text-white d-flex flex-col justify-around items-center">
+  <section
+    id="about"
+    class="setBg relative text-white d-flex flex-col justify-center items-center"
+  >
     <div class="h-12 w-full bg-gradient-to-b from-black to-transparent"></div>
-    <h2 class="d-flex justify-center items-center mb-24 text-center w-1/2 mx-auto p-2 bg-black rounded-lg">Nuestro próximo evento.</h2>
+    <h2
+      class="addGM d-flex justify-center items-center mb-24 text-center w-1/2 mx-auto p-2 rounded-lg text-black"
+    >
+      Próximo evento
+    </h2>
     <g-link
-      v-for="edge in $static.allEvents.edges"
-      :key="edge.node.id"
-      :href="edge.node.url_link"
-      class="pseudo-parallax-card-container flex flex-row mx-auto"
+      href="https://tickets.janto.es/truiteatre/public/janto/main.php?Nivel=Evento&idEvento=Javaloyas"
+      class="pseudo-parallax-card-container flex flex-row justify-center items-center mt-10 mx-auto"
     >
       <div class="mock top left"></div>
       <div class="mock top right"></div>
       <div class="mock bottom left"></div>
       <div class="mock bottom right"></div>
 
-      <div
-        class="content-container flex"
-        :style="{ backgroundImage: `url(/${edge.node.cover_image})` }"
-      >
+      <div class="content-container flex eventImg">
         <div class="controls-container flex flex-row">
           <span class="control"></span>
           <span class="control"></span>
@@ -46,49 +48,21 @@
 
 <script>
 export default {
-  watch: {
-  },
-  name: "About",
-  metaInfo() {
-    return this.$seo({
-      title: "", // Uses the titleTemplate in Gridsome config
-      description: "",
-      keywords: "Evento",
-      openGraph: {
-        title: "Los Javaloyas",
-        type: "website",
-      },
-      twitter: {
-        title: "Los Javaloyas",
-        type: "website",
-      },
-      link: [], // any links
-      script: [], // any scripts
-    });
-  },
-  data() {
-    return {};
-  },
-  created() {},
+  name: "EventosIndex",
 };
 </script>
 
-<static-query>
-query {
-  allEvents {
-    edges {
-      node {
-        id
-        title
-        url_link
-        cover_image
-      }
-    }
-  }
-}
-</static-query>
-
 <style scoped lang="scss">
+.addGM {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: block;
+  margin: 0 auto;
+}
+
 // colors
 $bg-color: #adc0ca;
 $content-bg-color: #2e4362;
@@ -228,6 +202,12 @@ $card-height: 450px;
   background-image: url(../../assets/img/partitura2.jpg);
   background-size: cover;
 }
+
+.eventImg{
+  background-image: url(../../assets/img/trueTeatre.jpg);
+  background-size: cover;
+}
+
 .dropBg {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(30px);

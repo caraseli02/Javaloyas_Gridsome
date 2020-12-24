@@ -15,7 +15,7 @@
           ></youtube> -->
           <iframe
             class="h-64"
-            :src="`https://www.youtube-nocookie.com/embed/${videoId}`"
+            :src="`https://www.youtube.com/embed/${videoId}`"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>

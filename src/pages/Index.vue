@@ -2,7 +2,7 @@
   <Layout :show-logo="false">
     <toTop />
     <Hero id="top" />
-    <Evento />
+    <EventIndex />
     <TeamCard />
     <Contact />
   </Layout>
@@ -10,13 +10,11 @@
 
 
 <script>
-import Author from "~/components/Author.vue";
 import toTop from "~/components/toTop.vue";
-import PostCard from "~/components/PostCard.vue";
-import Hero from "../components/index/Hero";
-import Evento from "../components/index/Evento";
-import Contact from "../components/index/Contact";
-import TeamCard from "../components/index/TeamCard";
+import Hero from "~/components/index/Hero";
+import EventIndex from "~/components/index/EventIndex";
+import Contact from "~/components/index/Contact";
+import TeamCard from "~/components/index/TeamCard";
 import windowScrollPosition from "@/scrollPosition";
 
 export default {
@@ -40,10 +38,8 @@ export default {
   components: {
     TeamCard,
     Contact,
-    Evento,
+    EventIndex,
     Hero,
-    Author,
-    PostCard,
     toTop,
   },
   methods: {

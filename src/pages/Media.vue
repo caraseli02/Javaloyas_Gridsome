@@ -48,13 +48,13 @@
         </div>
       </article>
     </div> -->
-    <About />
+    <SocialMedia />
   </layout>
 </template>
 
 <script>
 
-import About from "../components/media/About";
+import SocialMedia from "../components/media/SocialMedia";
 export default {
   name: "Media",
   metaInfo() {
@@ -128,7 +128,7 @@ export default {
     },
   },
   components: {
-    About
+    SocialMedia
   }
 };
 </script>

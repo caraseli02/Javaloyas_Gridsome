@@ -12,15 +12,10 @@ import VueGlide from "vue-glide-js";
 import "vue-glide-js/dist/vue-glide.css";
 /*Import VUE Glide SLIDER JS*/
 
-import VueCookies from 'vue-cookies';
-
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
-
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
-  
-  Vue.use(VueCookies);
 
   //Custom default options for all uses of the directive
   Vue.use(VueScrollReveal, {
