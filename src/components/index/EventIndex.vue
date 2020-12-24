@@ -4,191 +4,68 @@
     class="setBg relative text-white d-flex flex-col justify-center items-center"
   >
     <div class="h-12 w-full bg-gradient-to-b from-black to-transparent"></div>
-    <h2
-      class="addGM d-flex justify-center items-center mb-24 text-center w-1/2 mx-auto p-2 rounded-lg text-black"
-    >
-      Próximo evento
-    </h2>
-    <g-link
-      href="https://tickets.janto.es/truiteatre/public/janto/main.php?Nivel=Evento&idEvento=Javaloyas"
-      class="pseudo-parallax-card-container flex flex-row justify-center items-center mt-10 mx-auto"
-    >
-      <div class="mock top left"></div>
-      <div class="mock top right"></div>
-      <div class="mock bottom left"></div>
-      <div class="mock bottom right"></div>
 
-      <div class="content-container flex eventImg">
-        <div class="controls-container flex flex-row">
-          <span class="control"></span>
-          <span class="control"></span>
-          <span class="control"></span>
+    <div class="movie" id="movie-card">
+      <div class="movie__data" id="movie-data">
+        <div class="movie__poster">
+          <!-- <span class="movie__poster--fill">
+            <img
+              src="@/assets/img/partitura1.jpg"
+            />
+          </span> -->
+          <span class="movie__poster--featured">
+            <img src="@/assets/img/trueTeatre.jpg" />
+          </span>
         </div>
-
-        <div class="message-container">
-          <!--<div class="message message-one text-sm flex justify-center items-center">Sábado 7 Noviembre</div>
-            <div class="message message-two flex justify-center items-center">20:30H</div>-->
-          <div
-            class="message message-three flex justify-center z-30 items-center"
+        <div class="movie__details">
+          <span
+            class="d-flex justify-center items-center mb-24 text-center w-1/2 mx-auto p-2 rounded-lg text-black"
           >
-            <g-link class="comprar" href="https://www.truiteatre.es/"
-              >Comprar entradas</g-link
-            >
-          </div>
-          <div class="instructions">
-            <!--<h2 class="name">Es Gremi </h2>-->
+            Próximo evento
+          </span>
+          <h2 class="movie__title text-black">ALEGRIA EN NUESTROS CORAZONES</h2>
+          <p class="movie__plot">
+            LOS JAVALOYAS en Concierto, artista invitado Santi Carulla de los
+            MUSTANGS
+          </p>
+          <div class="movie__credits">
+            <p><strong>Recinto:</strong> TRUI TEATRE Palma</p>
+            <p><strong>INICIO:</strong> 18.30h</p>
+            <p><strong>APERTURA DE PUERTAS:</strong> 17.30h</p>
+            <p class="buyBtn flex justify-center z-30 items-center">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="comprar"
+                href="https://tickets.janto.es/truiteatre/public/janto/main.php?Nivel=Evento&idEvento=Javaloyas"
+                >Comprar entradas</a
+              >
+            </p>
           </div>
         </div>
-        w
       </div>
-    </g-link>
+      <!-- <input
+        class="movie__search"
+        id="movie-search"
+        type="text"
+        placeholder="Enter a movie title"
+      /> -->
+    </div>
     <div class="h-12 w-full bg-gradient-to-t from-black to-transparent"></div>
   </section>
 </template>
 
 <script>
-export default {
-  name: "EventosIndex",
-};
+export default {};
 </script>
 
 <style scoped lang="scss">
-.addGM {
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  display: block;
+.buyBtn {
+  background: #97fac9;
+  width: 70%;
   margin: 0 auto;
-}
-
-// colors
-$bg-color: #adc0ca;
-$content-bg-color: #2e4362;
-$violet: #528acf;
-$pink-light: #e1b55e;
-$green-light: #97fac9;
-//dims
-$card-width: 320px;
-$card-height: 450px;
-
-:root {
-  --angleX: 0deg;
-  --angleY: 0deg;
-}
-
-.flex {
-  display: flex;
-
-  &.flex-row {
-    flex-flow: row wrap;
-  }
-}
-
-.pseudo-parallax-card-container {
-  width: $card-width;
-  height: $card-height;
-}
-
-.mock {
-  width: 50%;
-  height: 50%;
-  z-index: 2;
-
-  &.left.top:hover ~ .content-container {
-    --angleX: 8deg;
-    --angleY: -25deg;
-  }
-
-  &.right.top:hover ~ .content-container {
-    --angleX: 8deg;
-    --angleY: 25deg;
-  }
-
-  &.left.bottom:hover ~ .content-container {
-    --angleX: -8deg;
-    --angleY: -25deg;
-  }
-
-  &.right.bottom:hover ~ .content-container {
-    --angleX: -8deg;
-    --angleY: 25deg;
-  }
-}
-
-.content-container {
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: $card-width;
-  height: $card-height;
-  text-align: center;
-  background-size: cover;
-  border-radius: 10px;
-  //    cursor: pointer;
-  color: black;
-  user-select: none;
-  transition: box-shadow 0.5s ease, transform 0.65s ease;
-  will-change: transform;
-  box-shadow: -20px 10px 20px rgba($color: #000000, $alpha: 0.4);
-  transform: translateY(0) rotateX(var(--angleX, 0)) rotateY(var(--angleY, 0))
-    translateZ(-10px);
-  filter: brightness(110%);
-}
-
-.controls-container {
-  position: absolute;
-  top: 5%;
-  left: 75%;
-  width: 50px;
-  height: 20px;
-  justify-content: space-between;
-
-  & .control {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: $content-bg-color;
-    box-shadow: -2px 2px 1px black, -0.5px 1px 0px #f0f0f0 inset;
-  }
-}
-
-.message-container {
-  & .message {
-    position: absolute;
-    top: -5%;
-    left: 0;
-    width: 180px;
-    height: 40px;
-    z-index: 200;
-    border-radius: 20px;
-    box-shadow: -20px 10px 10px rgba(0, 0, 0, 0.2), -1px -1px 0px #a0a0a0 inset;
-
-    &-one {
-      background: $violet;
-    }
-
-    &-two {
-      width: 80px;
-      top: 5%;
-      left: 0;
-      background: $pink-light;
-    }
-
-    &-three {
-      width: 180px;
-      left: 45%;
-      background: $green-light;
-    }
-  }
-
-  & .instructions {
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    left: 0%;
-  }
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
 .name {
@@ -203,19 +80,196 @@ $card-height: 450px;
   background-size: cover;
 }
 
-.eventImg{
+.eventImg {
   background-image: url(../../assets/img/trueTeatre.jpg);
   background-size: cover;
 }
 
-.dropBg {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(30px);
-  padding: 2%;
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900");
+
+$font-body: "Lato", sans-serif;
+$font-heading: $font-body;
+$base-spacing: 12px;
+$base-radius: 0.8em;
+$poster-width: 370px;
+$poster-span: 300px;
+$bp-md: 600px;
+$bp-sm: 400px;
+
+h1,
+h2,
+p,
+ul {
+  line-height: 1.2;
+
+  &:not(:last-child) {
+    margin-bottom: $base-spacing;
+  }
 }
 
-.setOverflow {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+p,
+li {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+p + ul {
+  margin-top: -$base-spacing + 2px;
+}
+
+h1,
+h2,
+strong {
+  font-weight: 900;
+}
+
+input {
+  padding: 6px;
+  font-family: $font-body;
+  font-size: 16px;
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+.list {
+  &--inline li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $base-spacing;
+    }
+  }
+}
+
+.movie {
+  position: relative;
+  overflow: hidden;
+  margin: $base-spacing auto;
+  width: 100%;
+  max-width: 800px;
+  border-radius: $base-radius;
+  box-shadow: rgba(black, 0.2) 0 30px 18px -24px;
+
+  &__data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: $poster-span * 2;
+
+    @media (min-width: $bp-md) {
+      flex-direction: row;
+    }
+  }
+
+  &__search {
+    position: absolute;
+    top: $base-spacing * 2;
+    right: $base-spacing * 2;
+    margin: auto;
+    width: calc(100% - (#{$base-spacing} * 4));
+
+    @media (min-width: $bp-sm) {
+      max-width: 200px;
+    }
+  }
+
+  &__tags {
+    font-size: 0.75em;
+    color: darkgray;
+  }
+
+  &__poster {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background: transparent;
+    -webkit-backdrop-filter: blur(5px);
+
+    @media (min-width: $bp-md) {
+      margin-right: $base-spacing;
+      width: $poster-span;
+    }
+
+    &--fill {
+      position: absolute;
+      overflow: hidden;
+      top: -80%;
+      bottom: -20%;
+      left: -20%;
+      width: 150%;
+      height: 150%;
+      transform: rotate(5deg);
+
+      @media (min-width: $bp-md) {
+        top: -20%;
+        width: 100%;
+      }
+
+      img {
+        filter: blur(6px);
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.4);
+      }
+    }
+
+    &--featured {
+      position: relative;
+      align-self: center;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-top: $base-spacing * 7;
+      width: $poster-width;
+      background-color: gainsboro;
+      border-radius: 2px;
+      box-shadow: rgba(black, 0.6) 0 6px 12px -6px;
+      z-index: 1;
+
+      @media (min-width: $bp-md) {
+        left: $poster-width / 5;
+        margin: auto;
+      }
+
+      img {
+        width: $poster-width;
+        vertical-align: middle;
+
+        &[src="N/A"] {
+          min-height: 206px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__details {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: black;
+    flex: 1;
+    padding: $base-spacing * 2;
+
+    @media (min-width: $bp-md) {
+      padding: $base-spacing * 6;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 2em;
+  }
+
+  &__no-results {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
