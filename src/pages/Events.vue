@@ -38,7 +38,6 @@
               <!--<h2 class="name">Es Gremi </h2>-->
             </div>
           </div>
-          w
         </div>
       </g-link>
     </section>
