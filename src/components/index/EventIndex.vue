@@ -83,6 +83,7 @@ export default {};
 .eventImg {
   background-image: url(../../assets/img/trueTeatre.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900");
