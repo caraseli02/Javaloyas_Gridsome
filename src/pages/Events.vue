@@ -15,7 +15,7 @@
         <div class="mock bottom right"></div>
 
         <div
-          class="content-container flex"
+          class="content-container flex EventImg"
           :style="{ backgroundImage: `url(/${edge.node.cover_image})` }"
         >
           <div class="controls-container flex flex-row">
@@ -83,6 +83,11 @@ query {
 </page-query>
 
 <style scoped lang="scss">
+.EventImg{
+ background-position: center;
+ background-size: cover;
+} 
+
 .setBg {
   background-image: url(../assets/img/partitura2.jpg);
   background-size: cover;
