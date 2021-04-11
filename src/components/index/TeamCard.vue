@@ -102,7 +102,7 @@ export default {
         },
         {
           name: "Daniel Salva",
-          inst: "Voz, Bajo",
+          inst: "Voz, Guitarra",
           img: "Daniel",
         },
         {
@@ -114,6 +114,11 @@ export default {
           name: "Javier Simal",
           inst: "Voz, Guitarra, Trompeta",
           img: "Javier",
+        },
+        {
+          name: "Julio Ortiz",
+          inst: "Voz, Bajo",
+          img: "Julio",
         },
       ],
     };
