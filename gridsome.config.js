@@ -14,6 +14,9 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias.set("@img", "@/assets/img");
   },
+  chainWebpack: (config) => {
+    config.resolve.alias.set("@banda", "@/assets/img/banda");
+  },
 
   plugins: [
     {

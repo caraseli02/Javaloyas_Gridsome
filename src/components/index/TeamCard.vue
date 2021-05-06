@@ -1,94 +1,49 @@
 <template>
-  <section class="svg pt-20 pb-48">
+  <section class="bg-black w-screen h-screen relative">
     <div class="container mx-auto">
-      <div class="flex flex-wrap justify-center text-center mb-24">
-        <div class="w-full lg:w-6/12 px-4">
-          <h3 class="text-4xl font-semibold uppercase">Banda</h3>
-        </div>
-      </div>
-      <!-- Trainer Card Wrapper -->
-      <vue-glide class="" :options="options">
-        <template slot="control">
-          <button
-            class="absolute w-full h-12 flex justify-center mt-10 text-xl border-0 outline-none animate-pulse"
-            data-glide-dir="<"
-          >
-            <div class="transform rotate-90">
-              <svg
-                class="animate-bounce w-6 h-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-              </svg>
-            </div>
-          </button>
-          <button
-            class="absolute w-full h-12 flex justify-center text-xl border-0 outline-none animate-pulse"
-            data-glide-dir=">"
-          >
-            <div class="transform -rotate-90">
-              <svg
-                class="animate-bounce w-6 h-6"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-              </svg>
-            </div>
-          </button>
-        </template>
-        <vue-glide-slide
-          v-for="(member, index) in members"
-          :key="index"
-          class="m-0"
+      <article class="mx-4 sm:pt-8 relative" @click="matchHeightContainer">
+        <section
+          class="flex justify-start items-center overflow-auto w-full h-screen mr-4 container sm:grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 sm:mx-auto"
+          ref="content"
         >
-          <div class="pr-8">
-            <g-image
-              :alt="`${member.name} los javaloyas`"
-              :src="require(`!!assets-loader!@img/${member.img}.png`)"
-              class="shadow-lg rounded mx-auto"
-            />
-            <div class="pt-6 text-center">
-              <h3 class="text-xl font-bold">{{ member.name }}</h3>
-              <p class="mt-1 text-sm uppercase font-semibold">
-                {{ member.inst }}
-              </p>
-            </div>
-          </div>
-        </vue-glide-slide>
-      </vue-glide>
+          <g-image
+            ref="infoImg"
+            :class="`child mx-4 w-2/3 lg:w-2/5 rounded-lg blog-shadow-dreamy border-purple-700 ${img.img} `"
+            v-for="img in members"
+            :key="img.name"
+            :src="require(`!!assets-loader!@banda/${img.img}.jpg`)"
+            :id="img.img"
+          ></g-image>
+        </section>
+        <div
+          class="absolute bottom-0 left-0 mb-16 flex justify-beetwen bg-red-700 -ml-4 sm:hidden"
+        >
+          <button
+            v-if="imgCount !== 0"
+            @click="swipeLeft()"
+            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -pl-3 text-xl pt-4"
+          >
+            ←
+          </button>
+          <button
+            v-if="imgCount !== 5"
+            @click="swipeRight()"
+            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow rounded-full w-12 h-12 -pr-3 text-xl pb-4"
+          >
+            →
+          </button>
+        </div>
+      </article>
     </div>
   </section>
 </template>
 
 <script>
-import { Glide, GlideSlide } from "vue-glide-js";
-
 export default {
   name: "TeamCard",
   data() {
     return {
-      options: {
-        autoplay: 5000,
-        bound: true,
-        breakpoints: {
-          450: {
-            perView: 1,
-          },
-          800: {
-            perView: 2,
-          },
-        },
-      },
+      imgCount: 0,
       members: [
         {
           name: "Luis Javaloyas",
@@ -123,53 +78,91 @@ export default {
       ],
     };
   },
-  components: {
-    [Glide.name]: Glide,
-    [GlideSlide.name]: GlideSlide,
+  methods: {
+    matchHeightContainer() {
+      let width = this.$refs.content.clientWidth;
+      console.log("Container", width);
+    },
+    matchHeightImg() {
+      let width = this.$refs.infoImg.clientWidth;
+      console.log("img", width);
+    },
+    scrollTo(element, scrollPixels, duration) {
+      const scrollPos = element.scrollLeft;
+      // Condition to check if scrolling is required
+      if (
+        !(
+          (scrollPos === 0 || scrollPixels > 0) &&
+          (element.clientWidth + scrollPos === element.scrollWidth ||
+            scrollPixels < 0)
+        )
+      ) {
+        // Get the start timestamp
+        const startTime =
+          "now" in window.performance
+            ? performance.now()
+            : new Date().getTime();
+
+        function scroll(timestamp) {
+          //Calculate the timeelapsed
+          const timeElapsed = timestamp - startTime;
+          //Calculate progress
+          const progress = Math.min(timeElapsed / duration, 1);
+          //Set the scrolleft
+          element.scrollLeft = scrollPos + scrollPixels * progress;
+          //Check if elapsed time is less then duration then call the requestAnimation, otherwise exit
+          if (timeElapsed < duration) {
+            //Request for animation
+            window.requestAnimationFrame(scroll);
+          } else {
+            return;
+          }
+        }
+        //Call requestAnimationFrame on scroll function first time
+        window.requestAnimationFrame(scroll);
+      }
+    },
+    swipeLeft() {
+      const content = this.$refs.content;
+      this.scrollTo(content, -300, 800);
+      this.imgCount--;
+    },
+    swipeRight() {
+      const content = this.$refs.content;
+      this.scrollTo(content, 300, 800);
+      this.imgCount++;
+    },
+  },
+  mounted() {
+    this.matchHeightImg();
+    this.matchHeightContainer();
   },
 };
 </script>
 
 <style scoped lang="scss">
-.svg {
-  position: relative;
+$primary: #221e21;
 
-  &:before {
-    content: "";
-    background-image: url(../../assets/img/violin.svg);
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 600px;
-    height: 100px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  &:after {
-    content: "";
-    background-image: url(../../assets/img/micro.svg);
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 400px;
-    height: 120px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-  }
+.blog-shadow-dreamy {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+.container {
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+}
+.Daniel,
+.Leo {
+  justify-self: center;
 }
 
-button {
-  border: none;
-  outline: none;
+.Javier,
+.Julio {
+  justify-self: end;
 }
 
-button:focus,
-button:active,
-button:hover {
-  outline: none;
+.child {
+  scroll-snap-align: center;
 }
 </style>

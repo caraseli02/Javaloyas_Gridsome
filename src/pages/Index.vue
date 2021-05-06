@@ -3,6 +3,11 @@
     <toTop />
     <Hero id="top" />
     <EventIndex />
+    <h1
+      class="text-4xl font-semibold uppercase absolute z-10 text-center w-screen -mt-4"
+    >
+      Los Javaloyas
+    </h1>
     <TeamCard />
     <Contact />
   </Layout>
