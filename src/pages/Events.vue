@@ -30,9 +30,13 @@
             <div
               class="message message-three flex justify-center z-30 items-center"
             >
-              <g-link class="comprar" href="https://www.truiteatre.es/"
+              <!-- <g-link class="comprar" href="https://www.truiteatre.es/"
                 >Comprar entradas</g-link
-              >
+              > -->
+              <span class="inline-flex justify-center items-center ">
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor" color="#000"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>19 de Junio</span>
+             <span class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2  absolute -ml-72 -mt-8 rounded-full">
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg>Muro</span>
             </div>
             <div class="instructions">
               <!--<h2 class="name">Es Gremi </h2>-->
@@ -40,6 +44,7 @@
           </div>
         </div>
       </g-link>
+      
     </section>
   </layout>
 </template>

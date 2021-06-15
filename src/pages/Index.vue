@@ -4,10 +4,10 @@
     <Hero id="top" />
     <EventIndex />
     <h1
-      class="text-4xl font-semibold uppercase absolute z-10 text-center w-screen -mt-4"
-    >
-      Los Javaloyas
-    </h1>
+        class="text-4xl font-semibold uppercase absolute z-10 text-center w-screen -mt-4"
+      >
+        Los Javaloyas
+      </h1>
     <TeamCard />
     <Contact />
   </Layout>
@@ -25,7 +25,7 @@ import windowScrollPosition from "@/scrollPosition";
 export default {
   metaInfo() {
     return this.$seo({
-      title: "Inicio", // Uses the titleTemplate in Gridsome config
+      title: "Pagina Web oficial del grupo", // Uses the titleTemplate in Gridsome config
       description: "",
       keywords: "Historia, Contacto, Banda",
       openGraph: {

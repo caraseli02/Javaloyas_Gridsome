@@ -6,18 +6,23 @@
     <div class="h-12 w-full bg-gradient-to-b from-black to-transparent"></div>
 
     <div class="movie" id="movie-card">
-      <div class="movie__data" id="movie-data">
-        <div class="movie__poster">
+      <div class="flex flex-col justify-center items-center  font-medium">
+          <h4 class="text-4xl text-black bg-gray-50 p-2 lg:pl-4 lg:-ml-6 rounded">Proximo Evento</h4>
+          <span class="text-2xl mb-2 text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded">
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor" color="#000"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>19 de Junio</span>
+          <span class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded">
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg>Muro</span>
+        </div>
+      <div class="w-full mx-auto" id="movie-data">
+        <div class="flex justify-center items-center">
           <!-- <span class="movie__poster--fill">
             <img
               src="@/assets/img/partitura1.jpg"
             />
           </span> -->
-          <span class="movie__poster--featured">
-            <img src="@/assets/img/trueTeatre.jpg" />
-          </span>
+            <img class="w-64 mt-8" src="@/assets/img/conciertoMuro.jpg" />
         </div>
-        <div class="movie__details">
+        <!-- <div class="movie__details">
           <span
             class="d-flex justify-center items-center mb-24 text-center w-1/2 mx-auto p-2 rounded-lg text-black"
           >
@@ -42,7 +47,7 @@
               >
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- <input
         class="movie__search"
@@ -81,7 +86,7 @@ export default {};
 }
 
 .eventImg {
-  background-image: url(../../assets/img/trueTeatre.jpg);
+  background-image: url(../../assets/img/conciertoMuro.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -150,7 +155,6 @@ input {
   width: 100%;
   max-width: 800px;
   border-radius: $base-radius;
-  box-shadow: rgba(black, 0.2) 0 30px 18px -24px;
 
   &__data {
     position: relative;

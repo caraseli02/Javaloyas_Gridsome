@@ -18,7 +18,7 @@
           <div class="message-container">
             <div class="message message-one text-sm flex justify-center items-center">Sábado 7 Noviembre</div>
             <div class="message message-two flex justify-center items-center">20:30H</div>
-            <div class="message message-three flex justify-center items-center">Comprar entradas</div>
+            <!-- <div class="message message-three flex justify-center items-center">Comprar entradas</div> -->
             <div class="instructions">
               <!--<h2 class="name">Es Gremi </h2>-->
 

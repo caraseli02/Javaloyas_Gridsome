@@ -1,38 +1,23 @@
 <template>
   <section class="bg-black w-screen h-screen relative">
     <div class="container mx-auto">
-      <article class="mx-4 sm:pt-8 relative" @click="matchHeightContainer">
+      <article class="mx-6 sm:pt-8 relative">
         <section
           class="flex justify-start items-center overflow-auto w-full h-screen mr-4 container sm:grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 sm:mx-auto"
           ref="content"
         >
           <g-image
             ref="infoImg"
-            :class="`child mx-4 w-2/3 lg:w-2/5 rounded-lg blog-shadow-dreamy border-purple-700 ${img.img} `"
+            :class="`child mx-1 w-2/3 lg:w-2/5 rounded-lg blog-shadow-dreamy border-purple-700 ${img.img} `"
             v-for="img in members"
             :key="img.name"
             :src="require(`!!assets-loader!@banda/${img.img}.jpg`)"
             :id="img.img"
           ></g-image>
         </section>
-        <div
-          class="absolute bottom-0 left-0 mb-16 flex justify-beetwen bg-red-700 -ml-4 sm:hidden"
-        >
-          <button
-            v-if="imgCount !== 0"
-            @click="swipeLeft()"
-            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -pl-3 text-xl pt-4"
-          >
-            ←
-          </button>
-          <button
-            v-if="imgCount !== 5"
-            @click="swipeRight()"
-            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow rounded-full w-12 h-12 -pr-3 text-xl pb-4"
-          >
-            →
-          </button>
-        </div>
+        <span
+          class="absolute top-0 right-0 mr-2 mt-64 flex justify-beetwen border-2 border-red-500 bg-transparent sm:hidden rounded-lg w-16 h-8"
+        >Test</span>
       </article>
     </div>
   </section>
@@ -43,6 +28,7 @@ export default {
   name: "TeamCard",
   data() {
     return {
+      currentScrollPosition: 0,
       imgCount: 0,
       members: [
         {
@@ -76,67 +62,12 @@ export default {
           img: "Julio",
         },
       ],
+      hasScrolledToBottom: false,
+      controlWidth: 0,
     };
   },
-  methods: {
-    matchHeightContainer() {
-      let width = this.$refs.content.clientWidth;
-      console.log("Container", width);
-    },
-    matchHeightImg() {
-      let width = this.$refs.infoImg.clientWidth;
-      console.log("img", width);
-    },
-    scrollTo(element, scrollPixels, duration) {
-      const scrollPos = element.scrollLeft;
-      // Condition to check if scrolling is required
-      if (
-        !(
-          (scrollPos === 0 || scrollPixels > 0) &&
-          (element.clientWidth + scrollPos === element.scrollWidth ||
-            scrollPixels < 0)
-        )
-      ) {
-        // Get the start timestamp
-        const startTime =
-          "now" in window.performance
-            ? performance.now()
-            : new Date().getTime();
-
-        function scroll(timestamp) {
-          //Calculate the timeelapsed
-          const timeElapsed = timestamp - startTime;
-          //Calculate progress
-          const progress = Math.min(timeElapsed / duration, 1);
-          //Set the scrolleft
-          element.scrollLeft = scrollPos + scrollPixels * progress;
-          //Check if elapsed time is less then duration then call the requestAnimation, otherwise exit
-          if (timeElapsed < duration) {
-            //Request for animation
-            window.requestAnimationFrame(scroll);
-          } else {
-            return;
-          }
-        }
-        //Call requestAnimationFrame on scroll function first time
-        window.requestAnimationFrame(scroll);
-      }
-    },
-    swipeLeft() {
-      const content = this.$refs.content;
-      this.scrollTo(content, -300, 800);
-      this.imgCount--;
-    },
-    swipeRight() {
-      const content = this.$refs.content;
-      this.scrollTo(content, 300, 800);
-      this.imgCount++;
-    },
-  },
-  mounted() {
-    this.matchHeightImg();
-    this.matchHeightContainer();
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
 
