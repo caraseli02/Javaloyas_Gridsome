@@ -1,5 +1,5 @@
 ---
-cover_image: uploads/conciertoMuro.jpg
+cover_image: uploads/conciertoBlancaterra.jpeg
 title: Los Javaloyas
-url_link: ''
+url_link: 'https://www.blancaterra.com/producto/los-javaloyas-en-directo/'
 ---

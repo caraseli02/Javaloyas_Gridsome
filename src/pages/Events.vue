@@ -7,7 +7,7 @@
         v-for="edge in $page.allEvents.edges"
         :key="edge.node.id"
         :href="edge.node.url_link"
-        class="pseudo-parallax-card-container flex flex-row"
+        class="pseudo-parallax-card-container flex flex-row cover"
       >
         <div class="mock top left"></div>
         <div class="mock top right"></div>
@@ -25,8 +25,8 @@
           </div>
 
           <div class="message-container">
-            <!--<div class="message message-one text-sm flex justify-center items-center">Sábado 7 Noviembre</div>
-            <div class="message message-two flex justify-center items-center">20:30H</div>-->
+            <!--<div class="message message-one text-sm flex justify-center items-center">Sábado 7 Noviembre</div>-->
+            <div class="message message-two flex justify-center items-center">21:00H</div>
             <div
               class="message message-three flex justify-center z-30 items-center"
             >
@@ -34,9 +34,9 @@
                 >Comprar entradas</g-link
               > -->
               <span class="inline-flex justify-center items-center ">
-            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor" color="#000"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>19 de Junio</span>
-             <span class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2  absolute -ml-72 -mt-8 rounded-full">
-            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg>Muro</span>
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor" color="#000"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>24 de Julio</span>
+             <span class="text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2  absolute -ml-72 -mt-8 rounded-full">
+            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg>Bodega Blanca Terra</span>
             </div>
             <div class="instructions">
               <!--<h2 class="name">Es Gremi </h2>-->
@@ -159,14 +159,15 @@ $card-height: 450px;
   width: $card-width;
   height: $card-height;
   text-align: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 10px;
   //    cursor: pointer;
   color: black;
   user-select: none;
   transition: box-shadow 0.5s ease, transform 0.65s ease;
   will-change: transform;
-  box-shadow: -20px 10px 20px rgba($color: #000000, $alpha: 0.4);
+  // box-shadow: -20px 10px 20px rgba($color: #000000, $alpha: 0.4);
   transform: translateY(0) rotateX(var(--angleX, 0)) rotateY(var(--angleY, 0))
     translateZ(-10px);
   filter: brightness(110%);

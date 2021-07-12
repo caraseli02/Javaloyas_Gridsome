@@ -7,12 +7,66 @@
 
     <div class="movie" id="movie-card">
       <div class="flex flex-col justify-center items-center  font-medium">
-          <h4 class="text-4xl text-black bg-gray-50 p-2 lg:pl-4 lg:-ml-6 rounded">Proximo Evento</h4>
-          <span class="text-2xl mb-2 text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded">
-            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" stroke="currentColor" color="#000"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>19 de Junio</span>
-          <span class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded">
-            <svg class="mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg>Muro</span>
-        </div>
+        <h4 class="text-4xl text-black bg-gray-50 p-2 lg:pl-4 lg:-ml-6 rounded">
+          Proximo Evento
+        </h4>
+        <span
+          class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded"
+        >
+          <svg
+            class="mr-2"
+            width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            stroke="currentColor"
+            color="#000"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+              clip-rule="evenodd"
+            ></path></svg
+          >24 de Julio</span
+        >
+        <span
+          class="text-2xl text-gray-700 inline-flex justify-center items-center bg-gray-100 p-2 rounded my-2"
+        >
+          <svg
+            class="mr-2"
+            width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            color="#000"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"
+            ></path></svg
+          >Bodega Blanca Terra</span
+        >
+        <a target="_blank" rel="noopener noreferrer" href="https://www.blancaterra.com/producto/los-javaloyas-en-directo/" class="text-2xl bg-yellow-200 inline-flex justify-center items-center p-2 rounded no-underline"
+          ><svg
+          class="mr-2"
+            width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            color="#000"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+            ></path></svg
+        > Comprar entradas</a>
+      </div>
       <div class="w-full mx-auto" id="movie-data">
         <div class="flex justify-center items-center">
           <!-- <span class="movie__poster--fill">
@@ -20,7 +74,7 @@
               src="@/assets/img/partitura1.jpg"
             />
           </span> -->
-            <img class="w-64 mt-8" src="@/assets/img/conciertoMuro.jpg" />
+          <img class="w-64 mt-8" src="@/assets/img/conciertoBlancaterra.jpeg" />
         </div>
         <!-- <div class="movie__details">
           <span
@@ -86,7 +140,7 @@ export default {};
 }
 
 .eventImg {
-  background-image: url(../../assets/img/conciertoMuro.jpg);
+  background-image: url(../../assets/img/conciertoBlancaterra.jpeg);
   background-size: cover;
   background-position: center;
 }
