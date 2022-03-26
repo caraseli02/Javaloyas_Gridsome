@@ -18,9 +18,10 @@
       </ul>
     </div>
     <g-image
-      class="static lg:bottom-0 h-auto lg:w-4/5 xl:w-3/5 flex lg:right-0 mx-auto lg:rounded-lg lg:border-solid lg:border-64 lg:border-black z-20"
-      src="@/assets/img/landing1.jpg"
+      class="static lg:bottom-0 h-auto w-full sm:w-2/5 flex lg:right-0 mx-auto lg:rounded-lg lg:border-solid lg:border-64 lg:border-black z-20"
+      src="@/assets/img/landing1.jpeg"
       alt="Los javaloyas, conjuntos más populares y asociados a la música pop española"
+      fit="cover"
     >
       <span
         id="blackOverlay"
@@ -93,11 +94,11 @@
                 class="mr-4 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white p-4 border border-red-800 hover:border-transparent rounded inline-block cursor-pointer"
                 >Contacto</a
               >
-              <g-link
+              <!-- <g-link
                 to="/events/"
                 class="bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white p-4 border border-red-800 hover:border-transparent rounded inline-block cursor-pointer"
                 >Eventos
-              </g-link>
+              </g-link> -->
             </div>
           </div>
         </div>
@@ -131,7 +132,7 @@ export default {
     };
   },
   methods: {
-    play: function (event) {
+    play: function(event) {
       var a = this.$refs.audioElm;
       if (a.paused) {
         a.play();

@@ -25,7 +25,7 @@
 <script>
 export default {
   name: "About",
-  data: function () {
+  data: function() {
     return {
       texts: [
         "Para la gran mayoría de seguidores y simpatizantes de Los Javaloyas es muy fácil identificarlos cuando , en algún lugar, suena una de sus canciones.",
@@ -80,7 +80,7 @@ $color: #20b2aa;
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../assets/img/landing2.jpg);
+    url(../assets/img/landing2.jpeg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

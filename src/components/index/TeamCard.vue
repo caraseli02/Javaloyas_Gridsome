@@ -8,16 +8,35 @@
         >
           <g-image
             ref="infoImg"
-            :class="`child mx-1 w-2/3 lg:w-2/5 rounded-lg blog-shadow-dreamy border-purple-700 ${img.img} `"
+            :class="
+              `child mx-1 w-2/3 lg:w-2/5 rounded-lg blog-shadow-dreamy border-purple-700 ${
+                img.img
+              } `
+            "
             v-for="img in members"
             :key="img.name"
             :src="require(`!!assets-loader!@banda/${img.img}.jpg`)"
             :id="img.img"
           ></g-image>
         </section>
-        <span
-          class="absolute top-0 right-0 mr-2 mt-64 flex justify-beetwen border-2 border-red-500 bg-transparent sm:hidden rounded-lg w-16 h-8"
-        >Test</span>
+        <div
+          class="absolute bottom-0 left-0 mb-16 flex justify-beetwen bg-red-700 -ml-4 sm:hidden"
+        >
+          <button
+            v-if="imgCount !== 0"
+            @click="swipeLeft()"
+            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -pl-3 text-xl pt-4"
+          >
+            ←
+          </button>
+          <button
+            v-if="imgCount !== 5"
+            @click="swipeRight()"
+            class="text-gray-200 hover:text-yellow-500 font-bold hover:shadow rounded-full w-12 h-12 -pr-3 text-xl pb-4"
+          >
+            →
+          </button>
+        </div>
       </article>
     </div>
   </section>
@@ -37,9 +56,9 @@ export default {
           img: "Luis",
         },
         {
-          name: "Serafin Nebot",
-          inst: "Voz Solista, Violin",
-          img: "Serafin",
+          name: "Joan Carles Juliá",
+          inst: "Saxofón",
+          img: "Joan",
         },
         {
           name: "Daniel Salva",

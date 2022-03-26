@@ -73,7 +73,7 @@
           <span class="clampLinkTitle text-bold">Social</span>
           <span class="mt-2">
             <a
-              href="https://www.facebook.com/losjavaloyas.javaloyas"
+              href="https://www.facebook.com/profile.php?id=100071175189242"
               target="_blank"
               rel="noopener"
               class="hover:text-white"

@@ -2,22 +2,21 @@
   <Layout :show-logo="false">
     <toTop />
     <Hero id="top" />
-    <EventIndex />
+    <!-- <EventIndex /> -->
     <h1
-        class="text-4xl font-semibold uppercase absolute z-10 text-center w-screen -mt-4"
-      >
-        Los Javaloyas
-      </h1>
+      class="text-4xl font-semibold uppercase absolute z-10 text-center w-screen -mt-4"
+    >
+      Los Javaloyas
+    </h1>
     <TeamCard />
     <Contact />
   </Layout>
 </template>
 
-
 <script>
 import toTop from "~/components/toTop.vue";
 import Hero from "~/components/index/Hero";
-import EventIndex from "~/components/index/EventIndex";
+// import EventIndex from "~/components/index/EventIndex";
 import Contact from "~/components/index/Contact";
 import TeamCard from "~/components/index/TeamCard";
 import windowScrollPosition from "@/scrollPosition";
@@ -43,12 +42,12 @@ export default {
   components: {
     TeamCard,
     Contact,
-    EventIndex,
+    // EventIndex,
     Hero,
     toTop,
   },
   methods: {
-    scrollTop: function () {
+    scrollTop: function() {
       this.intervalId = setInterval(() => {
         if (window.pageYOffset === 0) {
           clearInterval(this.intervalId);
@@ -56,14 +55,14 @@ export default {
         window.scroll(0, window.pageYOffset - 50);
       }, 20);
     },
-    scrollListener: function (e) {
+    scrollListener: function(e) {
       this.visible = window.scrollY > 150;
     },
   },
-  mounted: function () {
+  mounted: function() {
     window.addEventListener("scroll", this.scrollListener);
   },
-  beforeDestroy: function () {
+  beforeDestroy: function() {
     window.removeEventListener("scroll", this.scrollListener);
   },
   mixins: [windowScrollPosition("position")],
